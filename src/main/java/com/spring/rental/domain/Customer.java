@@ -1,4 +1,4 @@
-package com.spring.rental.model;
+package com.spring.rental.domain;
 
 import lombok.Data;
 

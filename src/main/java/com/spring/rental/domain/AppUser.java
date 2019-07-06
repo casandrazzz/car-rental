@@ -1,18 +1,21 @@
-package com.spring.rental.model;
+package com.spring.rental.domain;
 
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Data
 
 @Entity
-public class Person {
+@Table(name = "user", schema = "public")
+public class User {
 
     private String firstName;
     private String lastName;
     private int age;
     private String phoneNumber;
     private String emailAddress;
+    private String role;
 
 }

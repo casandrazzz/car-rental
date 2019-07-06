@@ -1,4 +1,4 @@
 package com.spring.rental.repository;
 
-public interface ICar {
+public class AppUserRepository {
 }

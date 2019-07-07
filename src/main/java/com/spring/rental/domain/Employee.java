@@ -1,4 +1,10 @@
-package com.spring.rental.model;
+package com.spring.rental.domain;
 
-public class Employee {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "employee", schema = "public")
+public class Employee extends AbstractModel {
+    private String firstName;
+    private String lastName;
 }

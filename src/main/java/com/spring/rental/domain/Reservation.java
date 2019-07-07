@@ -1,4 +1,4 @@
-package com.spring.rental.model;
+package com.spring.rental.domain;
 
 import lombok.Data;
 
@@ -9,15 +9,12 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "reservation", schema = "public")
-public class Reservation {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int pk;
-
+public class Reservation extends AbstractModel {
     private String location;
     private LocalDate pickUpDate;
     private LocalDate returnDate;
     private int rentalPeriod;
     private final boolean rented;
+
+    // add customer and car here
 }

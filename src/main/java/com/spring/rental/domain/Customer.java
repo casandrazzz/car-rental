@@ -12,9 +12,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "user", schema = "public")
-public class User extends Person {
-    @Id
-    private int pk;
+public class User extends AbstractModel{
 
     private String username;
     private String password;

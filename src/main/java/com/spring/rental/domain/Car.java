@@ -1,4 +1,4 @@
-package com.spring.rental.model;
+package com.spring.rental.domain;
 
 import lombok.Data;
 import lombok.Getter;
@@ -15,11 +15,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "car", schema = "public")
-public class Car {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int pk;
-
+public class Car extends AbstractModel{
    // private String location;
    // private LocalDate pickUpDate;
    // private LocalDate returnDate;

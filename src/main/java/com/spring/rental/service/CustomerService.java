@@ -1,4 +1,7 @@
 package com.spring.rental.service;
 
-public class UserService {
+import org.springframework.stereotype.Service;
+
+@Service
+public class CustomerService {
 }

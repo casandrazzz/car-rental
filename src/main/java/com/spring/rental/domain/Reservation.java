@@ -9,12 +9,31 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "reservation", schema = "public")
-public class Reservation extends AbstractModel {
+public class Reservation {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long pk;
+
+    @Column (name = "location")
     private String location;
+
+    @Column (name = "pickUpDate")
     private LocalDate pickUpDate;
+
+    @Column (name = "returnDate")
     private LocalDate returnDate;
+
+    @Column (name = "rentalPeriod")
     private int rentalPeriod;
+
+    @Column (name = "rented")
     private final boolean rented;
 
     // add customer and car here
+    @Column (name = "CarId")
+    private long CarId;
+
+    @Column (name = "UserId")
+    private long UserId;
 }

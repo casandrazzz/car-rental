@@ -2,5 +2,13 @@ package com.spring.rental.dao;
 
 import com.spring.rental.domain.Reservation;
 
-public interface ReservationRepository extends BaseRepository<Reservation> {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface ReservationRepository extends JpaRepository<Reservation, Long> {
+List<Reservation> findByLocation (String location);
+List<Reservation> findAll();
 }

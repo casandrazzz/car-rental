@@ -5,6 +5,7 @@ import com.spring.rental.domain.Employee;
 
 import java.util.Collection;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,19 +13,17 @@ public class EmployeeService {
 
     EmployeeRepository employeeRepository;
 
-    Collection<Employee> getAll(){
-        return employeeRepository.getAll();
-    }
+   // Collection<Employee> getAll(){ return employeeRepository.getAll();
+   // }
 
-    Employee findById(Long id){
-        return employeeRepository.findById(id);
-    }
+   // Employee findById(Long id){
+   //     return employeeRepository.findById(id);
+   // }
+    // Employee update(Employee employee){
+       // return employeeRepository.update(employee);
+    //}
 
-    Employee update(Employee employee){
-        return employeeRepository.update(employee);
-    }
-
-    boolean delete(Employee employee){
-        return employeeRepository.delete(employee);
-    }
+   // boolean delete(Employee employee){
+     //   return employeeRepository.delete(employee);
+    //}
 }

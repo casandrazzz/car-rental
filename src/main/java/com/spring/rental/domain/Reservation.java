@@ -11,6 +11,14 @@ import java.time.LocalDate;
 @Table(name = "reservation", schema = "public")
 public class Reservation {
 
+    @ManyToOne
+    @JoinColumn(name = "pkCar", nullable = false)
+    private Car car;
+
+    @ManyToOne
+    @JoinColumn(name = "pkUser", nullable = false)
+    private Customer customer;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long pk;
@@ -31,9 +39,4 @@ public class Reservation {
     private final boolean rented;
 
     // add customer and car here
-    @Column (name = "CarId")
-    private long CarId;
-
-    @Column (name = "UserId")
-    private long UserId;
 }

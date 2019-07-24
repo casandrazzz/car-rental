@@ -1,4 +1,4 @@
 package com.spring.rental.service;
 
-public interface CustomerService {
+public interface Employee {
 }

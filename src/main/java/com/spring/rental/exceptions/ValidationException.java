@@ -1,4 +1,4 @@
-package com.spring.rental.service;
+package com.spring.rental.exceptions;
 
 import java.util.Arrays;
 

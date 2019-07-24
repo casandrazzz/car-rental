@@ -3,6 +3,7 @@ package com.spring.rental.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Data
@@ -12,9 +13,13 @@ import javax.persistence.*;
 @Entity
 @Table(name = "car", schema = "public")
 public class Car {
+    @OneToMany(mappedBy="car", cascade = CascadeType.ALL)
+    private Set<Reservation> reservations;
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long pk;
+    private long pkCar;
 
    @Column (name = "transmission")
     private String transmission;
@@ -89,7 +94,7 @@ public class Car {
         public Car build() {
 
             Car car = new Car();
-            car.setPk(this.pk);
+            car.setPkCar(this.pk);
             car.setTransmission(this.transmission);
             car.setVehicleType(this.vehicleType);
             car.setVehicleMake(this.vehicleMake);

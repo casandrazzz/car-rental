@@ -5,12 +5,17 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Data
 
 @Entity
 @Table(name = "customer", schema = "public")
 public class Customer {
+
+    @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)
+    private Set<Reservation> reservations;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long pk;

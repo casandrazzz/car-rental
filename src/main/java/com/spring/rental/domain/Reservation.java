@@ -38,5 +38,7 @@ public class Reservation {
     @Column (name = "rented")
     private final boolean rented;
 
+
+
     // add customer and car here
 }

@@ -4,13 +4,16 @@ import com.spring.rental.dao.CarRepository;
 import com.spring.rental.dao.ReservationRepository;
 import com.spring.rental.domain.Car;
 import com.spring.rental.dto.CarReservationDto;
-import com.spring.rental.exceptions.InvalidCarReservation;
+import com.spring.rental.exceptionsCarReservation.InvalidCarReservation;
+import com.spring.rental.exceptionsCarReservation.NoAvailableCarFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+
+import static com.spring.rental.exceptionsCarReservation.Codes.NO_AVAILABLE_CAR_FOUND;
 
 @Service
 public class CarReservationServiceImpl implements CarReservationService {
@@ -50,7 +53,7 @@ public class CarReservationServiceImpl implements CarReservationService {
     }
 
     @Override
-    public Set<CarReservationDto> getAvailableCars(LocalDate pickUpDate, LocalDate returnDate) {
+    public Set<CarReservationDto> getAvailableCars(LocalDate pickUpDate, LocalDate returnDate) throws NoAvailableCarFound {
 
 
         Set<CarReservationDto> availableCars = new HashSet<>();
@@ -67,9 +70,15 @@ public class CarReservationServiceImpl implements CarReservationService {
 
 
                 availableCars.add(carReservationDto);
+                if (availableCars.isEmpty()){
+                    throw new NoAvailableCarFound("No available cars found. Please refine your search", NO_AVAILABLE_CAR_FOUND);
+                }
 
-            }
+
+        }
             return availableCars;
+
+
     }
 
     @Override

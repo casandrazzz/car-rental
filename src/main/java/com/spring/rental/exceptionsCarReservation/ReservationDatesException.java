@@ -1,11 +1,12 @@
-package com.spring.rental.exceptions;
+package com.spring.rental.exceptionsCarReservation;
 
 import java.util.Arrays;
 
-public class ValidationException extends Exception{
+public class ReservationDatesException extends Exception {
+
     private String[] causes;
 
-    public ValidationException(String... causes) {
+    public ReservationDatesException(String... causes) {
         super();
         this.causes = causes;
     }
@@ -15,4 +16,5 @@ public class ValidationException extends Exception{
 
         return causes != null ? Arrays.toString(causes) : "No CAUSE!";
     }
+    
 }

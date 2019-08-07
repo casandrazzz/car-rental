@@ -6,6 +6,7 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @ToString
@@ -14,5 +15,5 @@ public class ReservationDto {
     private String location;
     private LocalDate pickUpDate;
     private LocalDate returnDate;
-    private List<Car> availableCars;
+    private Set<Car> availableCars;
 }

@@ -1,11 +1,8 @@
 package com.spring.rental.searchForCar;
 
-import com.spring.rental.enums.VehicleType;
-
 public class AvailableCarSearchCriteria extends SearchCriteria {
 
     public enum CarSearchType
-
     {
         BY_VEHICLE_TYPE,
         BY_VEHICLE_MAKE,

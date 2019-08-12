@@ -36,9 +36,10 @@ public class Reservation {
     private int rentalPeriod;
 
     @Column (name = "rented")
-    private final boolean rented;
-
-
+    private boolean rented;
 
     // add customer and car here
+
+    public Reservation() {
+    }
 }

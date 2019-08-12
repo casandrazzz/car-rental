@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Car management</title>
+        <link href="webjars/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <h4>Car management</h4>
+        <div class="d-flex flex-column">
+            <div th:each="car : ${cars}" class="">
+                <span th:text="${car.vehicleModel}"></span>
+            </div>
+        </div>
+
+        <script src="webjars/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="webjars/jquery/3.4.1/jquery.min.js"></script>
+    </body>
+</html>

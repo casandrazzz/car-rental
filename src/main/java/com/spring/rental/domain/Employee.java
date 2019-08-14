@@ -1,11 +1,15 @@
 package com.spring.rental.domain;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@Getter
+@Setter
+@Builder
+@ToString
 @Table(name = "employee")
 public class Employee {
 
@@ -14,7 +18,7 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long pk;
+    private long id;
 
     @Column(name = "firstName" )
     private String firstName;

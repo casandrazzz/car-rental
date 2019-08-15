@@ -3,8 +3,8 @@ package com.spring.rental.service;
 import com.spring.rental.dao.CarRepository;
 import com.spring.rental.domain.Car;
 import com.spring.rental.dto.CarDto;
-import com.spring.rental.exceptionsCarReservation.InvalidCarReservation;
-import com.spring.rental.exceptionsCarReservation.NoAvailableCarFound;
+import com.spring.rental.exceptions.NotFoundException;
+import com.spring.rental.exceptions.reservationExceptions.NoAvailableCarFound;
 import com.spring.rental.mapper.CarMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.spring.rental.exceptionsCarReservation.Codes.NO_AVAILABLE_CAR_FOUND;
+import static com.spring.rental.exceptions.reservationExceptions.Codes.NO_AVAILABLE_CAR_FOUND;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -32,24 +32,31 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<CarDto> findAll() {
-        return carRepository.findAll().stream().map(it ->  carMapper.toDto(it)).collect(Collectors.toList());
+        return carRepository.findAll().stream().map(it -> carMapper.toDto(it)).collect(Collectors.toList());
     }
 
     @Override
-    public void addCar(CarDto carDto) throws InvalidCarReservation {
+    public void delete(long pk) {
+        carRepository.deleteById(pk);
+    }
+
+    @Override
+    public Long save(CarDto carDto) {
         Car car = new Car();
-        car.setVehicleMake(carDto.getVehicleMake());
-        carRepository.save(car);
+        if (carDto.getId() != null) {
+            // update car if already exists
+            car = loadById(carDto.getId());
+        }
+        return carRepository.save(carMapper.toEntity(carDto, car)).getId();
     }
 
     @Override
-    public void deleteCar(long pk) {
-
+    public CarDto findById(Long id) {
+        return carMapper.toDto(loadById(id));
     }
 
-    @Override
-    public void updateCar(long pk) {
-
+    private Car loadById(Long id) {
+        return carRepository.findById(id).orElseThrow(NotFoundException.wrapped(id, Car.class));
     }
 
     @Override

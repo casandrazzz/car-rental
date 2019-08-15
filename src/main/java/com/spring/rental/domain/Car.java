@@ -8,8 +8,6 @@ import java.util.Set;
 
 @Data
 @ToString
-
-
 @Entity
 @Table(name = "car", schema = "public")
 public class Car {
@@ -19,7 +17,7 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long pkCar;
+    private long id;
 
     @Column(name = "transmission")
     private String transmission;
@@ -39,6 +37,9 @@ public class Car {
     @Column(name = "rented")
     private boolean rented;
 
+    @Column(name = "price")
+    private Double price;
+
     public Car() {
     }
 
@@ -50,12 +51,12 @@ public class Car {
         this.reservations = reservations;
     }
 
-    public long getPkCar() {
-        return pkCar;
+    public long getId() {
+        return id;
     }
 
-    public void setPkCar(long pkCar) {
-        this.pkCar = pkCar;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTransmission() {
@@ -104,5 +105,13 @@ public class Car {
 
     public void setRented(boolean rented) {
         this.rented = rented;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

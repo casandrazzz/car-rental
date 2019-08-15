@@ -1,13 +1,13 @@
 package com.spring.rental.validation;
 
 import com.spring.rental.dto.ReservationDto;
-import com.spring.rental.exceptionsCarReservation.*;
+import com.spring.rental.exceptions.reservationExceptions.*;
 import org.springframework.util.StringUtils;
 
 import java.time.LocalDate;
 import java.util.*;
 
-import static com.spring.rental.exceptionsCarReservation.Codes.*;
+import static com.spring.rental.exceptions.reservationExceptions.Codes.*;
 
 public class ReservationDatesValidation {
 

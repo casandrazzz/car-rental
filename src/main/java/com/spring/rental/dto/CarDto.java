@@ -9,11 +9,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CarDto {
 
+    private Long id;
     private String transmission;
     private String vehicleType;
     private String vehicleMake;
     private String vehicleModel;
     private int seats;
+    private Double price;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTransmission() {
         return transmission;
@@ -53,5 +63,13 @@ public class CarDto {
 
     public void setSeats(int seats) {
         this.seats = seats;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

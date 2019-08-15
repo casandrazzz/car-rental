@@ -1,4 +1,4 @@
-package com.spring.rental.exceptionsCarReservation;
+package com.spring.rental.exceptions.reservationExceptions;
 
 import lombok.Getter;
 

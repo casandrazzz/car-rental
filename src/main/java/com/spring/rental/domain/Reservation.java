@@ -1,15 +1,25 @@
 package com.spring.rental.domain;
 
+import com.spring.rental.service.ReservationService;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+
+import static org.joda.time.Days.daysBetween;
 
 @Data
-
+@NoArgsConstructor
 @Entity
 @Table(name = "reservation", schema = "public")
 public class Reservation {
+
+    @Autowired
+    private static ReservationService reservationService;
 
     @ManyToOne
     @JoinColumn(name = "pkCar", nullable = false)
@@ -33,12 +43,14 @@ public class Reservation {
     private LocalDate returnDate;
 
     @Column (name = "rentalPeriod")
-    private int rentalPeriod;
+    public int rentalPeriod;
+
+
+  //  @Column (name = "rentalTax")
+  //  public long rentalTax;
 
     @Column (name = "rented")
-    private final boolean rented;
+    private boolean rented;
 
 
-
-    // add customer and car here
 }

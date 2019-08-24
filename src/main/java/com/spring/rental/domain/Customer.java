@@ -1,14 +1,16 @@
 package com.spring.rental.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.joda.time.LocalDate;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 @Data
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "customer", schema = "public")
 public class Customer {
@@ -40,6 +42,9 @@ public class Customer {
 
     @Column (name = "password")
     private String password;
+
+    @Column (name = "driverLicenseNumber")
+    private String driverLicenseNumber;
 
 
 

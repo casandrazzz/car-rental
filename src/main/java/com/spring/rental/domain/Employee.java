@@ -1,10 +1,14 @@
 package com.spring.rental.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "employee")
 public class Employee {
@@ -36,5 +40,7 @@ public class Employee {
 
     @Column (name = "password")
     private String password;
+
+
 
 }

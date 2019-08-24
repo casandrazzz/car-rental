@@ -1,5 +1,9 @@
 package com.spring.rental.domain;
 
+import com.spring.rental.enums.NumberOfSeats;
+import com.spring.rental.enums.Transmission;
+import com.spring.rental.enums.VehicleMake;
+import com.spring.rental.enums.VehicleType;
 import lombok.*;
 
 import javax.persistence.*;
@@ -8,14 +12,13 @@ import java.util.Set;
 
 @Data
 @ToString
-
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "car", schema = "public")
 public class Car {
     @OneToMany(mappedBy="car", cascade = CascadeType.ALL)
     private Set<Reservation> reservations;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,75 +42,11 @@ public class Car {
    @Column (name = "rented")
     private boolean rented;
 
-    public static class Builder extends Car {
-
-        private long pk;
-        private String transmission;
-        private String vehicleType;
-        private String vehicleMake;
-        private String vehicleModel;
-        private int seats;
-        private boolean rented;
-
-        public Builder pk(long pk) {
-            this.pk = pk;
-
-            return this;
-        }
-
-        public Builder transmission(String transmission) {
-            this.transmission = transmission;
-
-            return this;
-        }
-
-        public Builder vehicleType(String vehicleType) {
-            this.vehicleType = vehicleType;
-
-            return this;
-        }
-
-        public Builder vehicleMake(String vehicleMake) {
-            this.vehicleMake = vehicleMake;
-
-            return this;
-        }
-
-        public Builder vehicleModel(String vehicleModel) {
-            this.vehicleModel = vehicleModel;
-
-            return this;
-        }
-
-        public Builder seats(int seats) {
-            this.seats = seats;
-
-            return this;
-        }
-
-        public Builder rented(boolean rented) {
-            this.rented = rented;
-
-            return this;
-        }
-
-        public Car build() {
-
-            Car car = new Car();
-            car.setPkCar(this.pk);
-            car.setTransmission(this.transmission);
-            car.setVehicleType(this.vehicleType);
-            car.setVehicleMake(this.vehicleMake);
-            car.setVehicleModel(this.vehicleModel);
-            car.setSeats(this.seats);
-            car.setRented(this.rented);
-
-            return car;
 
 
         }
 
-    }
 
 
-}
+
+

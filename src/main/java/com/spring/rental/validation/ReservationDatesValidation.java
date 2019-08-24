@@ -7,11 +7,11 @@ import org.springframework.util.StringUtils;
 import java.time.LocalDate;
 import java.util.*;
 
-import static com.spring.rental.exceptionsCarReservation.Codes.*;
+import static com.spring.rental.exceptionsCarReservation.CodesCarReservation.*;
 
 public class ReservationDatesValidation {
 
-    private void validateReservationDates(ReservationDto reservationDto) throws ReservationDatesException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateBeforePickUpDateException, ReturnDateTooFarInTheFutureException {
+    public static void validateReservationDates(ReservationDto reservationDto) throws ReservationDatesException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateBeforePickUpDateException, ReturnDateTooFarInTheFutureException {
         LocalDate currentDate = LocalDate.now();
         LocalDate maximumReturnDate = LocalDate.of(2019, 12, 31);
         List<String> errors = new LinkedList<String>();

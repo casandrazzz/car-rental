@@ -1,5 +1,6 @@
 package com.spring.rental;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,5 +25,10 @@ public class Application {
         return new Docket(DocumentationType.SWAGGER_2).select()
                 .apis(RequestHandlerSelectors.basePackage("com.spring.rental.controller"))
                 .paths(PathSelectors.any()).build();
+    }
+
+    @Bean
+    public ModelMapper modelMapper (){
+        return new ModelMapper();
     }
 }

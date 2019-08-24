@@ -3,13 +3,13 @@ package com.spring.rental.searchForCar;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class SearchResults<T> {
+public abstract class SearchResults<CarReservationDto> {
 
     private int totalResults = 0;
     private int pageSize = 25;
-    private List<T> results = null;
+    private List<CarReservationDto> results = null;
 
-    public int getPageSize()
+    private int getPageSize()
     {
         return pageSize;
     }
@@ -26,17 +26,17 @@ public abstract class SearchResults<T> {
         this.totalResults = totalResults;
     }
 
-    public List<T> getResults()
+    public List<CarReservationDto> getResults()
     {
         return results;
     }
-    public List<T> getResults(int page)
+    public List<CarReservationDto> getResults(int page)
     {
         if(page <= 0 || page > this.getNumberOfPages())
         {
             throw new RuntimeException("Page number is zero or there are no that many page results.");
         }
-        List<T> subList = new ArrayList<T>();
+        List<CarReservationDto> subList = new ArrayList<CarReservationDto>();
         int start = (page -1)*this.getPageSize();
         int end = start + this.getPageSize();
         if(end > this.results.size())
@@ -58,11 +58,11 @@ public abstract class SearchResults<T> {
         }
         return (this.totalResults/this.pageSize)+(this.totalResults%this.pageSize > 0 ? 1: 0);
     }
-    public void setResults(List<T> aResults)
+    public void setResults(List<CarReservationDto> aResults)
     {
         if(aResults == null)
         {
-            aResults = new ArrayList<T>();
+            aResults = new ArrayList<CarReservationDto>();
         }
         this.results = aResults;
         this.setTotalResults(this.results.size());

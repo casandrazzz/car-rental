@@ -30,8 +30,9 @@ public class EmployeeController {
 
 
 
-    @PostMapping(value = "/")
-    public ModelAndView addEmployee(@ModelAttribute EmployeeInsertDto employeeInsertDto){
+    @PostMapping(value = "/employees")
+    public ModelAndView addEmployee(@ModelAttribute EmployeeInsertDto employeeInsertDto) throws InvalidEmployeeUsername, InvalidEmployeeAge,
+            InvalidEmployeeEmailAddress, InvalidEmployeeFirstAndLastName, InvalidEmployeePassword, InvalidEmployeePhoneNumber {
 
         try{
             employeeServiceInterface.addEmployee(employeeInsertDto);
@@ -55,11 +56,13 @@ public class EmployeeController {
         } catch (InvalidEmployeeFirstAndLastName invalidEmployeeFirstAndLastName) {
           Log.error(invalidEmployeeFirstAndLastName.getLocalizedMessage() + ":" + invalidEmployeeFirstAndLastName.getCode());
         }
+        employeeServiceInterface.addEmployee(employeeInsertDto);
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/");
 
         return modelAndView;
+        // good
     }
 
     /**
@@ -68,7 +71,7 @@ public class EmployeeController {
      * the param we choose for this case to delete an employeeServiceInterface
      * @return modelAndView after the delete happened or not.
      */
-    @PostMapping(value = "/delete")
+   /* @PostMapping(value = "/delete")
     public ModelAndView deleteEmployee(@RequestParam("username") String username) throws InvalidEmployeeUsername {
         if(employeeServiceInterface.deleteEmployee(username))
         {
@@ -82,12 +85,13 @@ public class EmployeeController {
 
         return modelAndView;
 
-    }
+    }*/
+/*
     @PostMapping(value = "/update")
     public  ModelAndView updateEmployeeFirstName(@RequestParam("firstName") String firstName)
     {
 
-
+        //TODO search baeldung
 
 
         ModelAndView modelAndView = new ModelAndView();
@@ -171,21 +175,22 @@ public class EmployeeController {
 
     }
 
+*/
 
 
 
+@PostMapping("/employees")
+    public List<EmployeeDto> getAllemployes( @ModelAttribute String firstName, @ModelAttribute String lastName,
+                                             @ModelAttribute int age, @ModelAttribute String phoneNumber, @ModelAttribute String emailAddress) throws NoEmployeeFound {
+    return employeeServiceInterface.getEmployees(firstName, lastName,age,phoneNumber,emailAddress);
+}
+/*
+@PostMapping("/deleteemployees")
+   List<EmployeeDto> deleteEmployee ( long pk)
+{
+    return  employeeServiceInterface.deleteEmployee(pk);
+}*/ //TODO redo this controller
 
-    @GetMapping(value = "/")
-    public ModelAndView show() {
-        List<EmployeeDto> employees = employeeServiceInterface.getEmployees();
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("employees", employees);
-        modelAndView.setViewName("index"); // TODO ViewName should be changed
-
-        return modelAndView;
-
-    }
 
 
 

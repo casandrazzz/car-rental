@@ -18,7 +18,7 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private long pk;
 
     @Column(name = "firstName" )
     private String firstName;

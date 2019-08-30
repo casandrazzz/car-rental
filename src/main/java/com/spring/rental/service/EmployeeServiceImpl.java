@@ -20,11 +20,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.ResultSetExtractor;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Service;
+
+import static com.spring.rental.exceptions.employeeexceptions.Codes.NO_EMPLOYEE;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeServiceInterface {
@@ -32,8 +30,6 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
     private static final Logger Log = Logger.getLogger(EmployeeServiceImpl.class);
 
     public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
@@ -41,15 +37,14 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
         this.employeeRepository = employeeRepository;
     }
 
-    @Override
+   /* @Override
     public void addEmployee(String firstName, String lastName, int age, String phoneNumber, String emailAddress, String username, String password) {
 
-    }
+    }*/
 
     @Override
     public void addEmployee(EmployeeInsertDto employeeInsertDto) throws InvalidEmployeeFirstAndLastName, InvalidEmployeePhoneNumber, InvalidEmployeePassword, InvalidEmployeeUsername, InvalidEmployeeAge, InvalidEmployeeEmailAddress {
-        String insertSql = "insert into employee values(firstName,lastName,age,phoneNumber,emailAddress,username,password)";
-        KeyHolder keyHolder = new GeneratedKeyHolder();
+        //String insertSql = "insert into employee values(firstName,lastName,age,phoneNumber,emailAddress,username,password)";
 
         EmployeeValidation.firstNameValidation(employeeInsertDto);
         EmployeeValidation.lastNameValidation(employeeInsertDto);
@@ -59,34 +54,19 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
         EmployeeValidation.employeeAgeValidation(employeeInsertDto);
         EmployeeValidation.employeeEmailAddressValidation(employeeInsertDto);
 
-        jdbcTemplate.update(
+        Employee employee = employeeRepository.findById(employeeInsertDto.getId()).get();
+
+        //maybe a transformer
+
+        employeeRepository.save(employee);
 
 
-                con -> {
-                    PreparedStatement ps = con.prepareStatement(insertSql, new String[] {"id"}); // TODO revise maybe
-                    ps.setString(1, "abc");
-                    ps.setString(2, "xyz");
-                    ps.setInt(3, 50);
-                    ps.setString(4, "0264");
-                    ps.setString(5, "x@yahoo.com");
-                    ps.setString(6, "art");
-                    ps.setString(7, "art123");
-                    Log.info("Employee added with succes");
-                    ps.executeUpdate();
-                    return ps;
-                },
-                keyHolder);
-            //TODO recheck this function https://www.programcreek.com/java-api-examples/index.php?api=org.springframework.jdbc.core.PreparedStatementCreator
 
 
     }
 
-    @Override
-    public void deleteEmployee(Integer id) {
 
-    }
-
-    @Override
+   /* @Override
     public boolean deleteEmployee(String username) {
 
         String deleteSql = "delete from employee where username='" + username + "'";
@@ -104,35 +84,78 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
         return true;
 
     }
-
+*/
     @Override
-    public List<EmployeeDto> getEmployees() {
+    public List<EmployeeDto> getEmployees(String firstName, String lastName, int age, String phoneNumber, String emailAddress) throws NoEmployeeFound {
 
-        String sql = "select * from employee";
 
-        List<EmployeeDto> employees = new ArrayList<>();
+        List<EmployeeDto> availableEmployees = new ArrayList<>();
 
-        jdbcTemplate.query(sql, (ResultSetExtractor) rs -> {
+        List<Employee> employees = employeeRepository.getEmployees( firstName,  lastName,  age,  phoneNumber,  emailAddress);
+        for (Employee employee : employees)
+        {
+            EmployeeDto employeeDto = new EmployeeDto();
 
-            while (rs.next()) {
-                EmployeeDto employeeDto = new EmployeeDto();
+            employeeDto.setFirstName(employee.getFirstName());
+            employeeDto.setLastName(employee.getLastName());
+            employeeDto.setAge(employee.getAge());
+            employeeDto.setPhoneNumber(employee.getPhoneNumber());
+            employeeDto.setEmailAddress(employeeDto.getEmailAddress());
 
-                employeeDto.setFirstName(rs.getString("firstName"));
-                employeeDto.setLastName(rs.getString("lastName"));
-                employeeDto.setEmailAddress(rs.getString("emailAddress"));
-                employeeDto.setAge(rs.getInt("age"));
-                employeeDto.setPhoneNumber(rs.getString("phoneNumber"));
-
-                employees.add(employeeDto);
+            availableEmployees.add(employeeDto);
+            if (availableEmployees.isEmpty()){
+                throw new NoEmployeeFound("We didn't find you any employee at this moment", NO_EMPLOYEE);
             }
-            return employees;
 
-        });
-        return employees;
+
+        }
+
+        return availableEmployees;
+            // This one is converted
+
 
     }
 
     @Override
+    public List<EmployeeDto> delete(String firstName, String lastName, int age, String phoneNumber, String emailAddress, long pk) throws NoEmployeeFound {
+
+        List<EmployeeDto> availableEmployees = new ArrayList<>();
+
+        List<Employee> employees = employeeRepository.getEmployees( firstName,  lastName,  age,  phoneNumber,  emailAddress);
+        for (Employee employee : employees)
+        {
+            EmployeeDto employeeDto = new EmployeeDto();
+
+            employeeDto.setFirstName(employee.getFirstName());
+            employeeDto.setLastName(employee.getLastName());
+            employeeDto.setAge(employee.getAge());
+            employeeDto.setPhoneNumber(employee.getPhoneNumber());
+            employeeDto.setEmailAddress(employeeDto.getEmailAddress());
+
+            availableEmployees.add(employeeDto);
+            if (availableEmployees.isEmpty()){
+                throw new NoEmployeeFound("We didn't find you any employee at this moment", NO_EMPLOYEE);
+            }
+        }
+        availableEmployees = employeeRepository.deleteEmployee(pk);
+
+        return  availableEmployees;
+        // TODO Maybe it's good
+    } }
+
+  /*  @Override
+    public EmployeeFindResults<EmployeeInsertDto> search(String firstName, String lastName, String username, String emailAddress) {
+        return null;
+    }*/
+
+   /* @Override
+    public List<EmployeeDto> deleteEmployee(long pk) {
+
+
+        return null;
+    }*/
+
+ /*   @Override
     public EmployeeDto findEmployeeByFirstName(String firstName) {
 
         try {
@@ -217,8 +240,8 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
 
         return employeeDtoTest;
     }
-
-    @Override
+*/
+  /*  @Override
     public EmployeeInsertDto updateEmployeeFirstName(String firstName) {
         String updateSql = "update employee set firstName =? where id = ?";
 
@@ -253,6 +276,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
         } catch (InvalidEmployeeFirstAndLastName invalidEmployeeFirstAndLastName) {
             invalidEmployeeFirstAndLastName.printStackTrace();
         }
+        //TODO Update after master
         Connection connection = null;
         try (PreparedStatement ps = connection.prepareStatement(updateSql)) {
             ps.setString(1, "John");
@@ -388,3 +412,4 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
 //Todo new functions on contrloller and on dao
 
 }
+*/

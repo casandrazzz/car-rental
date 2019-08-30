@@ -1,5 +1,6 @@
 package com.spring.rental;
 
+import com.spring.rental.controller.EmployeeController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +20,7 @@ public class Application {
 
     }
 
-
+// TODO catam ce scriem in main
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()

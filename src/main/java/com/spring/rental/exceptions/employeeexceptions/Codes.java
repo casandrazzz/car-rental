@@ -8,5 +8,5 @@ public  static  final  int INVALID_EMPLOYEE_USERNAME = 10_569;
 public  static  final  int INVALID_EMPLOYEE_EMAIL_ADDRESS = 10_570;
 public  static  final  int INVALID_EMPLOYEE_PASSWORD = 10_571;
 public  static  final  int INVALID_EMPLOYEE_PHONE_NUMBER = 10_572;
-
+public  static  final  int NO_EMPLOYEE = 10_573;
 }

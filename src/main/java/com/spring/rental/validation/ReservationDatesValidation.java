@@ -11,21 +11,31 @@ import static com.spring.rental.exceptionsCarReservation.CodesCarReservation.*;
 
 public class ReservationDatesValidation {
 
+    /**
+     * validates pick up date and return date
+     * @param reservationDto            reservation DTO
+     * @throws ReservationDatesException            exception
+     * @throws PickUpDateInThePastException         exception
+     * @throws ReturnDateInThePastException         exception
+     * @throws ReturnDateBeforePickUpDateException          exception
+     * @throws ReturnDateTooFarInTheFutureException         exception
+     */
+
     public static void validateReservationDates(ReservationDto reservationDto) throws ReservationDatesException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateBeforePickUpDateException, ReturnDateTooFarInTheFutureException {
-        LocalDate currentDate = LocalDate.now();
+        LocalDate currentDate = LocalDate.of(2019,8,1);
         LocalDate maximumReturnDate = LocalDate.of(2019, 12, 31);
         List<String> errors = new LinkedList<String>();
         if (StringUtils.isEmpty(reservationDto.getPickUpDate())) {
             errors.add("Pick-up date is empty. Please select a pick-up date");
         } else {
-            if (currentDate.isBefore(reservationDto.getPickUpDate())) {
+            if (reservationDto.getPickUpDate().isBefore(currentDate)) {
                 throw new PickUpDateInThePastException("Pick-up date is in the past", PICK_UP_DATE_IN_THE_PAST);
             }
 
             if (StringUtils.isEmpty(reservationDto.getReturnDate())) {
                 errors.add("Return date is empty.Please select a return date");
             } else {
-                if (currentDate.isBefore(reservationDto.getReturnDate())) {
+                if (reservationDto.getReturnDate().isBefore(currentDate)) {
                     throw new ReturnDateInThePastException("Return date is in the past", RETURN_DATE_IN_THE_PAST);
                 }
             }

@@ -8,11 +8,21 @@ import org.joda.time.LocalDate;
 import java.util.List;
 
 public interface ReservationService {
+    /**
+     * interface for ReservationService implementation
+     * @param reservationDto
+     * @throws ReservationDatesException
+     * @throws ReturnDateBeforePickUpDateException
+     * @throws PickUpDateInThePastException
+     * @throws ReturnDateInThePastException
+     * @throws ReturnDateTooFarInTheFutureException
+     * @throws NoAvailableCarFound
+     */
 
-    void addReservation(ReservationDto reservationDto, Long pkCar, Long pk) throws ReservationDatesException, ReturnDateBeforePickUpDateException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateTooFarInTheFutureException, NoAvailableCarFound;
+    void addReservation(ReservationDto reservationDto) throws ReservationDatesException, ReturnDateBeforePickUpDateException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateTooFarInTheFutureException, NoAvailableCarFound;
     void deleteReservation(long pk);
     void updateReservation();
-    List<Reservation> getReservations();
+    List<ReservationDto> getReservationsByCustomer(long pk);
 
-  //  long calculateReservationCost();
+    long calculateReservationCost(ReservationDto reservationDto, String vehicleType) throws ReservationDatesException, ReturnDateBeforePickUpDateException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateTooFarInTheFutureException;
 }

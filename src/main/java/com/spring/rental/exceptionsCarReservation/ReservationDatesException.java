@@ -4,6 +4,10 @@ import java.util.Arrays;
 
 public class ReservationDatesException extends Exception {
 
+    /**
+     * other validations for reservation dates
+     */
+
     private String[] causes;
 
     public ReservationDatesException(String... causes) {

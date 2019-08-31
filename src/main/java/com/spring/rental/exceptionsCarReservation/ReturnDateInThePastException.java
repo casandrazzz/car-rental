@@ -4,6 +4,10 @@ import lombok.Getter;
 
 public class ReturnDateInThePastException extends Exception {
 
+    /**
+     * error for the case when return date is before current date
+     */
+
     @Getter
     private final int code;
 

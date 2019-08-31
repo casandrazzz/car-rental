@@ -1,21 +1,19 @@
 package com.spring.rental.dto;
-
-import com.spring.rental.enums.NumberOfSeats;
-import com.spring.rental.enums.Transmission;
-import com.spring.rental.enums.VehicleMake;
-import com.spring.rental.enums.VehicleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.ColumnResult;
-import javax.persistence.ConstructorResult;
-import javax.persistence.SqlResultSetMapping;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class CarReservationDto {
+
+    /**
+     * DTO for car reservation
+     */
 
     private String transmission;
     private String vehicleType;

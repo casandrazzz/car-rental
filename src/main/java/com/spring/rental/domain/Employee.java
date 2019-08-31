@@ -12,6 +12,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "employee")
 public class Employee {
+    /**
+     * Employee table; employee performs car management action (CRUD)
+     */
 
 
 

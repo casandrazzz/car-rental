@@ -17,6 +17,13 @@ import static com.spring.rental.exceptionsCarReservation.CodesCarReservation.NO_
 @Service
 public class CarReservationServiceImpl implements CarReservationService {
 
+    /** implements CarReservationSerrvice interface
+     * gets available cars according to the specified pick-up date and return date
+     * @param pickUpDate        pick-up date for the car
+     * @param returnDate        return date for the car
+     * @return list of available cars in the selected date interval
+     */
+
     @Autowired
     private ReservationRepository reservationRepository;
 

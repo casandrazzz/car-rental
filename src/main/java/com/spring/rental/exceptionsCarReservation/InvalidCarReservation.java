@@ -4,6 +4,10 @@ import lombok.Getter;
 
 public class InvalidCarReservation extends Exception {
 
+    /**
+     * Error for invalid car reservation
+     */
+
 
     @Getter
     private final int code;

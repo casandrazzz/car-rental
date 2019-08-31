@@ -2,6 +2,10 @@ package com.spring.rental.exceptionsCarReservation;
 
 public class CodesCarReservation {
 
+    /**
+     * Codes for error messages
+     */
+
     public static final int CAR_NOT_FOUND = 10_001;
     public static final int NO_AVAILABLE_CAR_FOUND = 10_002;
     public static final int RETURN_DATE_BEFORE_PICK_UP_DATE = 10_003;

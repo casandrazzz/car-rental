@@ -1,6 +1,4 @@
 package com.spring.rental.controller;
-
-import com.spring.rental.domain.Car;
 import com.spring.rental.dto.CarReservationDto;
 import com.spring.rental.dto.ReservationDto;
 import com.spring.rental.exceptionsCarReservation.*;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 
@@ -42,21 +41,23 @@ public class CarReservationController {
     }
 
     @PostMapping(value = "/reservations")
-    public ModelAndView addReservation(ReservationDto reservationDto,
-                                       Long pkCar,
-                                       Long pk) throws ReturnDateBeforePickUpDateException,
+    public void addReservation(ReservationDto reservationDto) throws ReturnDateBeforePickUpDateException,
             PickUpDateInThePastException,
             ReturnDateInThePastException,
             ReservationDatesException,
             NoAvailableCarFound,
             ReturnDateTooFarInTheFutureException {
 
-        reservationService.addReservation(reservationDto,pkCar, pk );
+        reservationService.addReservation(reservationDto);
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/reservations");
 
-        return modelAndView;
+    }
+
+    @PostMapping(value = "/reservations/spec")
+    public List<ReservationDto> getReservationsByCustomer(long pk){
+       return reservationService.getReservationsByCustomer(pk);
+
+
     }
     }
 

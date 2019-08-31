@@ -5,18 +5,24 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.joda.time.Days;
-import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 
+import java.time.LocalDate;
+
 import static org.joda.time.Days.daysBetween;
 
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "reservation", schema = "public")
 public class Reservation {
+
+    /**
+     * Reservation table, joined with Car and Customer table
+     */
 
     @Autowired
     private static ReservationService reservationService;
@@ -37,20 +43,25 @@ public class Reservation {
     private String location;
 
     @Column (name = "pickUpDate")
-    private LocalDate pickUpDate;
+    public java.time.LocalDate pickUpDate;
 
     @Column (name = "returnDate")
-    private LocalDate returnDate;
+    public LocalDate returnDate;
 
     @Column (name = "rentalPeriod")
     public int rentalPeriod;
 
 
-  //  @Column (name = "rentalTax")
-  //  public long rentalTax;
-
     @Column (name = "rented")
     private boolean rented;
+
+    public Reservation(String location, LocalDate pickUpDate,LocalDate returnDate,Car car, long pk) {
+        this.location = location;
+        this.pickUpDate = pickUpDate;
+        this.returnDate = returnDate;
+        this.car = car;
+        this.pk = pk;
+    }
 
 
 }

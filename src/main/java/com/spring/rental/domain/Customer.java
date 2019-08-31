@@ -15,6 +15,10 @@ import java.util.Set;
 @Table(name = "customer", schema = "public")
 public class Customer {
 
+    /**
+     * Customer table, joined with Reservation table
+     */
+
     @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)
     private Set<Reservation> reservations;
 

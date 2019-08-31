@@ -1,9 +1,5 @@
 package com.spring.rental.domain;
 
-import com.spring.rental.enums.NumberOfSeats;
-import com.spring.rental.enums.Transmission;
-import com.spring.rental.enums.VehicleMake;
-import com.spring.rental.enums.VehicleType;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,6 +13,10 @@ import java.util.Set;
 @Entity
 @Table(name = "car", schema = "public")
 public class Car {
+
+    /**
+     * Car table, joined with Reservation table
+     */
     @OneToMany(mappedBy="car", cascade = CascadeType.ALL)
     private Set<Reservation> reservations;
 

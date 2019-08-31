@@ -42,8 +42,8 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
                                             @Param("vehicleType") String vehicleType
     );
 
-    @Query("SELECT new com.spring.rental.dto.ReservationDto(r.location, r.pickUpDate, r.returnDate, r.customer, r.pk) FROM Reservation r WHERE EXISTS (SELECT c FROM  Customer c where c.pk = r.customer)")
-    List<ReservationDto> getReservationsByCustomer(@Param("Customer") Long pk);
+    @Query("SELECT new com.spring.rental.dto.ReservationDto(r.location, r.pickUpDate, r.returnDate, r.customer, r.pk) FROM Reservation r WHERE EXISTS (SELECT c FROM  Customer c where c.pk = r.customer AND c.pk =:pk)")
+    List<ReservationDto> getReservationsByCustomer(@Param("pk") Long pk);
 
 
 

@@ -24,7 +24,7 @@ public class SearchController {
     @Autowired
     private CarRepository carRepository;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/cars")
+    @RequestMapping(method = RequestMethod.GET, value = "/carss")
     @ResponseBody
     public List<CarReservationDto> findAll(@RequestParam(value = "search", required = false) String search) {
         List<SearchCriteriaForCar> params = new ArrayList<>();

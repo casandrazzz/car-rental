@@ -15,7 +15,6 @@ public class ReservationDtoToReservationTransformer {
         Reservation reservation = new Reservation( );
        // reservation.setCar(reservationDto.getCar());
        // reservation.setCustomer(reservationDto.getCustomer());
-        reservation.setPk(reservationDto.getPk());
         reservation.setLocation(reservationDto.getLocation());
         reservation.setPickUpDate(reservationDto.getPickUpDate());
         reservation.setReturnDate(reservationDto.getReturnDate());

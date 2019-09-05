@@ -8,8 +8,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
-
+import java.util.Set;
 
 
 @Repository
@@ -23,6 +24,7 @@ public interface CarRepository extends JpaRepository<Car, Long> {
     Car findById(@Param("pkCar") long pkCar);
 
 
-    @Query("SELECT new com.spring.rental.dto.CarReservationDto(c.vehicleType, c.vehicleMake, c.vehicleModel, c.transmission, c.seats) FROM Car c")
+
+     @Query("SELECT new com.spring.rental.dto.CarReservationDto(c.vehicleType, c.vehicleMake, c.vehicleModel, c.transmission, c.seats) FROM Car c")
     List<CarReservationDto> findAll(Specification<CarReservationDto> spec);
 }

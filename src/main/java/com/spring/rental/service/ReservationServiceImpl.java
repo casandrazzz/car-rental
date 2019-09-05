@@ -8,21 +8,17 @@ import com.spring.rental.domain.Customer;
 import com.spring.rental.domain.Reservation;
 import com.spring.rental.dto.CarReservationDto;
 import com.spring.rental.dto.ReservationDto;
-import com.spring.rental.enums.VehicleType;
 import com.spring.rental.exceptionsCarReservation.*;
 import com.spring.rental.transformer.ReservationDtoToReservationTransformer;
 import com.spring.rental.validation.ReservationDatesValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static com.spring.rental.enums.VehicleType.CONVERTIBLE;
 import static com.spring.rental.exceptionsCarReservation.CodesCarReservation.NO_AVAILABLE_CAR_FOUND;
-import static java.lang.Enum.valueOf;
 import static java.time.temporal.ChronoUnit.DAYS;
 
 
@@ -95,7 +91,7 @@ public class ReservationServiceImpl implements ReservationService {
         Reservation reservation = ReservationDtoToReservationTransformer.transform(reservationDto);
 
         Car car = carRepository.findById(reservationDto.getPkCar());
-        Customer customer = customerRepository.findById(reservationDto.getPk());
+        Customer customer = customerRepository.findById(reservationDto.getPkCostumer());
 
 
 
@@ -125,16 +121,16 @@ public class ReservationServiceImpl implements ReservationService {
 
         List<ReservationDto> reservationsByCustomer = new ArrayList<>();
 
-        List<ReservationDto> reservations = reservationRepository.getReservationsByCustomer(pk);
+        List<Reservation> reservations = reservationRepository.getReservationsByCustomer(pk);
 
-        for (ReservationDto reservation : reservations) {
+        for (Reservation reservation : reservations) {
 
             ReservationDto reservationDto = new ReservationDto();
             reservationDto.setLocation(reservation.getLocation());
             reservationDto.setPickUpDate(reservation.getPickUpDate());
             reservationDto.setReturnDate(reservation.getReturnDate());
-            reservationDto.setPkCar(reservation.getPkCar());
-            reservationDto.setPk(reservation.getPk());
+            reservationDto.setPkCar(reservation.getCar().getPkC());
+            reservationDto.setPkCostumer(reservation.getCustomer().getPk());
 
 
             reservationsByCustomer.add(reservationDto);

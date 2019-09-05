@@ -3,6 +3,7 @@ package com.spring.rental.controller;
 
 
 import com.spring.rental.dto.CarFilterDto;
+import com.spring.rental.enums.VehicleType;
 import com.spring.rental.service.CarFilterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -33,9 +34,9 @@ public class CarFilterController {
     public List<CarFilterDto> filterAvailableCars(
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) @ModelAttribute LocalDate pickUpDate,
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) @ModelAttribute LocalDate returnDate,
-            String transmission, String vehicleType) {
+            String transmission, VehicleType vehicleType) {
 
-        return carFilterService.filterAvailableCars(pickUpDate, returnDate, transmission, vehicleType);
+        return carFilterService.filterAvailableCars(pickUpDate, returnDate, transmission, vehicleType.toString());
 
     }
 

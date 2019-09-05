@@ -55,13 +55,6 @@ public class Reservation {
     @Column (name = "rented")
     private boolean rented;
 
-    public Reservation(String location, LocalDate pickUpDate,LocalDate returnDate,Car car, long pk) {
-        this.location = location;
-        this.pickUpDate = pickUpDate;
-        this.returnDate = returnDate;
-        this.car = car;
-        this.pk = pk;
-    }
 
 
 }

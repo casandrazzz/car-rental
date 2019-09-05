@@ -6,7 +6,6 @@ import lombok.ToString;
 
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class CarReservationDto {
@@ -15,12 +14,20 @@ public class CarReservationDto {
      * DTO for car reservation
      */
 
+
     private String transmission;
-    private String vehicleType;
     private String vehicleMake;
     private String vehicleModel;
-    private int seats; ;
+    private String vehicleType;
+    private int seats;
 
+    public CarReservationDto(String vehicleType, String vehicleMake, String vehicleModel, String transmission, int seats){
+        this.vehicleType = vehicleType;
+        this.vehicleMake = vehicleMake;
+        this.vehicleModel = vehicleModel;
+        this.transmission = transmission;
+        this.seats = seats;
+    }
 
 
 }

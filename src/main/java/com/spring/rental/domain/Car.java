@@ -7,9 +7,9 @@ import java.util.Set;
 
 
 @Data
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "car", schema = "public")
 public class Car {
@@ -17,34 +17,38 @@ public class Car {
     /**
      * Car table, joined with Reservation table
      */
-    @OneToMany(mappedBy="car", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
     private Set<Reservation> reservations;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long pkCar;
+    private long pkC;
 
-   @Column (name = "transmission")
+    @Column(name = "transmission")
     private String transmission;
 
-   @Column (name = "vehicleType")
+    @Column(name = "vehicleType")
     private String vehicleType;
 
-   @Column (name = "vehicleMake")
+    @Column(name = "vehicleMake")
     private String vehicleMake;
 
-   @Column (name = "vehicleModel")
+    @Column(name = "vehicleModel")
     private String vehicleModel;
 
-   @Column (name = "seats")
+    @Column(name = "seats")
     private int seats;
 
-   @Column (name = "rented")
-    private boolean rented;
+   // public Car(long pk, int seats, String vehicleMake, String vehicleModel, String vehicleType) {
+   //     this.pk = pk;
+   //     this.seats = seats;
+   //     this.vehicleMake = vehicleMake;
+   //     this.vehicleModel = vehicleModel;
+   //     this.vehicleType = vehicleType;
 
 
-
-        }
+   // }
+}
 
 
 

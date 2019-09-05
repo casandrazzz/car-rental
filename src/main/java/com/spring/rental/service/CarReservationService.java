@@ -20,5 +20,5 @@ public interface CarReservationService {
         */
 
        Set<CarReservationDto> getAvailableCars(LocalDate pickUpDate, LocalDate returnDate) throws NoAvailableCarFound;
-       Set<CarReservationDto> getAvailableCarReservationDto(@Param("pickUpDate") LocalDate pickUpDate, @Param("returnDate") LocalDate returnDate);
+       Set<CarReservationDto> getAvailableCarReservation(@Param("pickUpDate") LocalDate pickUpDate, @Param("returnDate") LocalDate returnDate);
 }

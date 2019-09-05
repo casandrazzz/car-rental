@@ -1,4 +1,5 @@
 package com.spring.rental.controller;
+import com.spring.rental.domain.Car;
 import com.spring.rental.dto.CarReservationDto;
 import com.spring.rental.dto.ReservationDto;
 import com.spring.rental.exceptionsCarReservation.*;
@@ -7,7 +8,6 @@ import com.spring.rental.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -25,18 +25,12 @@ public class CarReservationController {
     @Autowired
     private ReservationService reservationService;
 
-    @ModelAttribute
-    LocalDate initLocalDate() {
-        return LocalDate.now();
-    }
+    @GetMapping("/cars")
+    public Set<CarReservationDto>  getAvailableCars(
+          @RequestParam("pickUpDate") @DateTimeFormat(iso=DateTimeFormat.ISO.DATE) LocalDate pickUpDate,
+          @RequestParam("returnDate")  @DateTimeFormat(iso=DateTimeFormat.ISO.DATE)  LocalDate returnDate) throws NoAvailableCarFound {
 
-
-    @PostMapping("/cars")
-    public Set<CarReservationDto>  getAvailableCarReservationDto(
-            @DateTimeFormat(iso=DateTimeFormat.ISO.DATE)  @ModelAttribute LocalDate pickUpDate,
-            @DateTimeFormat(iso=DateTimeFormat.ISO.DATE)  @ModelAttribute LocalDate returnDate) {
-
-        return carReservationService.getAvailableCarReservationDto(pickUpDate, returnDate);
+        return carReservationService.getAvailableCars(pickUpDate, returnDate);
 
     }
 

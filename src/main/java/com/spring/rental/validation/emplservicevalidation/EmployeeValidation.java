@@ -80,7 +80,7 @@ public class EmployeeValidation {
         }
 
         if(phoneNumber.matches("[0-9]+") && phoneNumber.length() == 10 && stringFlag){
-            Log.info("Phone number added with succes");    // TODO check if it's ok for view and phone number should start with 0
+            System.out.println("Phone number added with succes");    // TODO check if it's ok for view and phone number should start with 0
         }
         else throw new InvalidEmployeePhoneNumber("Phone number is invalid",INVALID_EMPLOYEE_PHONE_NUMBER);
     }
@@ -149,7 +149,7 @@ public class EmployeeValidation {
         }
         if (capitalFlag && numberFlag && lowerCaseFlag && lengthFlag && specialCharFlag && stringFlag  )
         {
-            Log.info("Password is valid");
+            System.out.println("Password is valid");
 
         }
         else throw new InvalidEmployeePassword("Password is invalid",INVALID_EMPLOYEE_PASSWORD);
@@ -173,7 +173,7 @@ public class EmployeeValidation {
 
         if(emailAddress.contains(specialCharacter) && stringFlag)
         {
-            Log.info("TEST, THIS VALIDATION IS NOT COMPLETE");
+            System.out.println("TEST, THIS VALIDATION IS NOT COMPLETE");
         }
         else throw  new InvalidEmployeeEmailAddress("This email adress is invalid",INVALID_EMPLOYEE_EMAIL_ADDRESS);
 
@@ -234,7 +234,7 @@ public class EmployeeValidation {
 
         if(emailAddress.contains(specialCharacter) && stringFlag)
         {
-            Log.info("TEST, THIS VALIDATION IS NOT COMPLETE");
+            System.out.println("TEST, THIS VALIDATION IS NOT COMPLETE");
         }
         else throw  new InvalidEmployeeEmailAddress("This email adress is invalid",INVALID_EMPLOYEE_EMAIL_ADDRESS);
 

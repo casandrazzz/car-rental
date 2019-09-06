@@ -37,24 +37,24 @@ public class EmployeeController {
         try{
             employeeServiceInterface.addEmployee(employeeInsertDto);
 
-            Log.info(" EmployeeServiceInterface inserted with success");
+            System.out.println(" EmployeeServiceInterface inserted with success");
         } catch (InvalidEmployeeUsername invalidEmployeeUsername) {
-           Log.error(invalidEmployeeUsername.getLocalizedMessage() + ":" + invalidEmployeeUsername.getCode());
+            System.out.println(invalidEmployeeUsername.getLocalizedMessage() + ":" + invalidEmployeeUsername.getCode());
 
         } catch (InvalidEmployeeEmailAddress invalidEmployeeEmailAddress) {
-           Log.error(invalidEmployeeEmailAddress.getLocalizedMessage() + ":" + invalidEmployeeEmailAddress.getCode());
+            System.out.println(invalidEmployeeEmailAddress.getLocalizedMessage() + ":" + invalidEmployeeEmailAddress.getCode());
 
         } catch (InvalidEmployeePhoneNumber invalidEmployeePhoneNumber) {
-            Log.error(invalidEmployeePhoneNumber.getLocalizedMessage() + ":" + invalidEmployeePhoneNumber.getCode());
+            System.out.println(invalidEmployeePhoneNumber.getLocalizedMessage() + ":" + invalidEmployeePhoneNumber.getCode());
 
         } catch (InvalidEmployeeAge invalidEmployeeAge) {
-           Log.error(invalidEmployeeAge.getLocalizedMessage() + ":" + invalidEmployeeAge.getCode() );
+            System.out.println(invalidEmployeeAge.getLocalizedMessage() + ":" + invalidEmployeeAge.getCode() );
 
         } catch (InvalidEmployeePassword invalidEmployeePassword) {
-          Log.error(invalidEmployeePassword.getLocalizedMessage() + ":" + invalidEmployeePassword.getCode());
+            System.out.println(invalidEmployeePassword.getLocalizedMessage() + ":" + invalidEmployeePassword.getCode());
 
         } catch (InvalidEmployeeFirstAndLastName invalidEmployeeFirstAndLastName) {
-          Log.error(invalidEmployeeFirstAndLastName.getLocalizedMessage() + ":" + invalidEmployeeFirstAndLastName.getCode());
+            System.out.println(invalidEmployeeFirstAndLastName.getLocalizedMessage() + ":" + invalidEmployeeFirstAndLastName.getCode());
         }
         employeeServiceInterface.addEmployee(employeeInsertDto);
 

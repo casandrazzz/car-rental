@@ -3,10 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="e21da416-2bee-4276-919c-6930f9e1a43a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/service/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/service/EmployeeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/validation/emplservicevalidation/EmployeeValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/validation/emplservicevalidation/EmployeeValidation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarFilterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarFilterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/dao/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/dao/CarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/dao/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/dao/ReservationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/dto/CarReservationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/dto/CarReservationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/dto/ReservationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/dto/ReservationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarReservationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/service/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/service/ReservationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/CarEntityToCarReservationDtoTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/CarEntityToCarReservationDtoTransformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/ReservationDtoToReservationTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/ReservationDtoToReservationTransformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,10 +55,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/EmployeeServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="226">
               <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/dao/ReservationRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,46 +74,92 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CustomerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarReservationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="55">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Car.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarSearchService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarReservationServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Reservation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="26">
               <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/dto/CarReservationDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="49">
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Car.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,37 +168,72 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="69" lean-forward="true" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/resources/addEmployee.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="731">
               <caret line="43" selection-start-line="43" selection-end-line="43" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/ReservationServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="696">
+              <caret line="131" column="63" selection-start-line="131" selection-start-column="63" selection-end-line="131" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/resources/script.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1751">
               <caret line="103" column="54" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <folding>
+                <element signature="e#718#719#0" expanded="true" />
+                <element signature="e#780#781#0" expanded="true" />
+              </folding>
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/resources/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/CarEntityToCarReservationDtoTransformer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
             </state>
           </provider>
         </entry>
@@ -138,6 +245,7 @@
       <list>
         <option value="Singleton" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
         <option value="HTML File" />
       </list>
@@ -162,6 +270,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/service/ReservationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/service/EmployeeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/DbAppUserController.java" />
@@ -213,6 +322,59 @@
         <option value="$PROJECT_DIR$/src/main/resources/employees.html" />
         <option value="$PROJECT_DIR$/src/main/resources/script.js" />
         <option value="$PROJECT_DIR$/src/main/resources/addEmployee.html" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/searchForCar/searchOperations/SearchCriteriaForCar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/searchForCar/CarSearchResults.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarSearchServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/service/FilterCarService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/configuration/DateTimeConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarSearchService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/dto/CarFilterDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/CodesCarReservation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/InvalidCarReservation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/NoAvailableCarFound.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/PickUpDateInThePastException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/ReservationDatesException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/ReturnDateBeforePickUpDateException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/ReturnDateInThePastException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/ReturnDateTooFarInTheFutureException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/CarSearchQueryCriteriaConsumer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/CarSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/CarSpecificationBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/CriteriaParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/GenericSpecificationsBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/MyCarPredicate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/MyCarPredicateBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/SearchCriteriaForCar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarFilterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/validation/ReservationDatesValidation.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test/repoTest/repositoryTest/ReservationRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/test/ApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test/repositoryTest/ReservationRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarFilterController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/ReservationDtoToReservationTransformer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/dto/ReservationDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/service/ReservationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/SearchController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/CarEntityToCarReservationDtoTransformer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/BulkController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Employee.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Reservation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/dao/EmployeeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/dao/CarRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/dao/CustomerRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarReservationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarReservationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/dto/CarReservationDto.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Car.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/service/ReservationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/dao/ReservationRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarReservationServiceImpl.java" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
       </list>
     </option>
   </component>
@@ -225,7 +387,12 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="car-rental" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -238,7 +405,11 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
+<<<<<<< HEAD
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+=======
+    <navigator proportions="" version="1">
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -283,6 +454,7 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -368,6 +540,148 @@
               <item name="car-rental" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="car-rental" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="target" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rental" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rental" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rental" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rental" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rental" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rental" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rental" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rental" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rental" type="462c0819:PsiDirectoryNode" />
+              <item name="transformer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="repositoryTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="car-rental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car-rental" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
             </path>
           </expand>
           <select />
@@ -385,11 +699,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567783793757" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../car-rental-master" />
+=======
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/car-rental-back_up.zip" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -399,6 +721,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.spring.rental.service" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.spring.rental.exceptions" />
       <recent name="com.spring.rental.DBController" />
@@ -419,6 +744,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spring.rental.Application" />
@@ -429,6 +755,20 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+=======
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="ReservationRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="car-rental" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.repositoryTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.repositoryTest" />
+      <option name="MAIN_CLASS_NAME" value="test.repositoryTest.ReservationRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -448,7 +788,12 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.Application" />
+=======
+        <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="JUnit.ReservationRepositoryTest" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
       </list>
     </recent_temporary>
   </component>
@@ -474,12 +819,46 @@
       <workItem from="1562603930126" duration="19376000" />
       <workItem from="1562859124233" duration="1177000" />
       <workItem from="1562862459089" duration="2860000" />
-      <workItem from="1563025796071" duration="22133000" />
+      <workItem from="1563025796071" duration="224778000" />
+      <workItem from="1566887284913" duration="28954000" />
+      <workItem from="1567084663792" duration="52616000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ReservationRepositoryTest - 2019.09.01 at 17h 15m 31s.xml">
+      <configuration name="ReservationRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ReservationRepositoryTest - 2019.09.01 at 17h 16m 32s.xml">
+      <configuration name="ReservationRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ReservationRepositoryTest - 2019.09.01 at 17h 24m 39s.xml">
+      <configuration name="ReservationRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ReservationRepositoryTest - 2019.09.01 at 17h 24m 49s.xml">
+      <configuration name="ReservationRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ReservationRepositoryTest - 2019.09.01 at 17h 26m 12s.xml">
+      <configuration name="ReservationRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ReservationRepositoryTest - 2019.09.01 at 17h 32m 58s.xml">
+      <configuration name="ReservationRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ReservationRepositoryTest - 2019.09.01 at 17h 42m 58s.xml">
+      <configuration name="ReservationRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ReservationRepositoryTest - 2019.09.01 at 17h 46m 06s.xml">
+      <configuration name="ReservationRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ReservationRepositoryTest - 2019.09.01 at 17h 48m 27s.xml">
+      <configuration name="ReservationRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ReservationRepositoryTest - 2019.09.01 at 17h 49m 21s.xml">
+      <configuration name="ReservationRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76064000" />
+    <option name="totallyTimeSpent" value="360279000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -493,7 +872,11 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.31744966" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" weight="0.28971255" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
       <window_info id="Structure" order="1" sideWeight="0.5008183" side_tool="true" weight="0.13086233" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -505,6 +888,7 @@
       <window_info id="Project Explorer" order="9" />
       <window_info id="Job Explorer" order="10" />
       <window_info anchor="bottom" id="Message" order="0" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Find" order="1" weight="0.33286119" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.4022663" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
@@ -516,6 +900,19 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067115" side_tool="true" weight="0.50708216" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3243626" />
+=======
+      <window_info anchor="bottom" id="Find" order="1" weight="0.33388704" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4976452" visible="true" weight="0.45171848" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40261865" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.42880523" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.3289689" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5023548" side_tool="true" weight="0.45847178" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.31096563" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32808024" />
@@ -524,6 +921,7 @@
       <window_info anchor="bottom" id="SQL" order="17" />
       <window_info anchor="bottom" id="Console" order="18" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+<<<<<<< HEAD
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24962178" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -538,6 +936,20 @@
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.4188627" />
+=======
+      <window_info anchor="right" id="Palette" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.24803768" />
+      <window_info anchor="right" id="Bean Validation" order="6" weight="0.32182103" />
+      <window_info anchor="right" id="Database" order="7" weight="0.5226929" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.24583964" />
+      <window_info anchor="right" id="Maven" order="9" weight="0.3265306" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.28971255" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
       <window_info id="Structure" order="1" sideWeight="0.5008183" side_tool="true" weight="0.13086233" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -549,6 +961,7 @@
       <window_info id="Project Explorer" order="9" />
       <window_info id="Job Explorer" order="10" />
       <window_info anchor="bottom" id="Message" order="0" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Find" order="1" weight="0.33286119" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.31948423" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
@@ -579,12 +992,73 @@
       <window_info anchor="right" id="Database" order="9" weight="0.68078667" />
       <window_info anchor="right" id="PlantUML" order="10" weight="0.3293011" />
       <window_info anchor="right" id="Codota" order="11" weight="0.3295302" />
+=======
+      <window_info anchor="bottom" id="Find" order="1" weight="0.33388704" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4976452" visible="true" weight="0.45171848" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40261865" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.42880523" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.3289689" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5023548" side_tool="true" weight="0.45847178" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.31096563" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Palette" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.24803768" />
+      <window_info anchor="right" id="Bean Validation" order="6" weight="0.32182103" />
+      <window_info anchor="right" id="Database" order="7" weight="0.5226929" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.24583964" />
+      <window_info anchor="right" id="Maven" order="9" weight="0.3265306" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Car.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/spring/rental/validation/ReservationDatesValidation.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarReservationController.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarReservationController.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.1.6.RELEASE/spring-boot-2.1.6.RELEASE.jar!/org/springframework/boot/context/logging/LoggingApplicationListener.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -687,12 +1161,143 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/ReservationDatesException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/ReturnDateBeforePickUpDateException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/ReturnDateInThePastException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/exceptionsCarReservation/ReturnDateTooFarInTheFutureException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/CarSearchQueryCriteriaConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1532#1533#0" expanded="true" />
+            <element signature="e#1564#1565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/CarSpecification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/CarSpecificationBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/CriteriaParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/GenericSpecificationsBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/MyCarPredicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#627#646#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/MyCarPredicateBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/SearchCriteriaForCar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/SearchOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/searchOperations/SpecSearchCriteria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarFilterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -731,11 +1336,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/validation/CarReservationValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/validation/ReservationDatesValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="23" column="69" selection-start-line="23" selection-start-column="69" selection-end-line="23" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CustomerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/test/ApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/employee.sql">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="51">
           <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
         </state>
@@ -773,22 +1419,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
           <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+=======
+        <state relative-caret-position="176">
+          <caret line="143" column="21" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/test/repositoryTest/ReservationRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarFilterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/ReservationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/controller/SearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/employeetransformer/EmployeeEntityToEmployeeDtoInsertTransformer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/configuration/DateTimeConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/employeetransformer/EmployeeEntityToEmployeeDtoTransformer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -813,33 +1508,96 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/ReservationDtoToReservationTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="16" column="64" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/convert/support/ArrayToObjectConverter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/convert/support/ConversionUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/convert/support/GenericConversionService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.9.RELEASE/spring-data-commons-2.1.9.RELEASE.jar!/org/springframework/data/repository/query/ResultProcessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="207" selection-start-line="207" selection-end-line="207" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#8749#8750#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/dto/EmployeeDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/controller/BulkController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/dto/EmployeeInsertDto.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="272">
           <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+=======
+        <state relative-caret-position="17">
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/exceptions/ValidationException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/dto/CarFilterDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
         </state>
       </provider>
     </entry>
@@ -852,6 +1610,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/controller/EmployeeController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="952">
           <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
           <folding>
@@ -864,12 +1623,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+=======
+        <state relative-caret-position="119">
+          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/dao/CarRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#0#132#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CustomerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -881,22 +1653,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/dao/CustomerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Reservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="56" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/dto/ReservationDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/employees.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -946,14 +1741,83 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarReservationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CustomerServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarSearchService.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/controller/CarReservationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/transformer/CarEntityToCarReservationDtoTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="e#718#719#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/dto/CarReservationDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="69" lean-forward="true" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/domain/Car.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/ReservationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="85">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
@@ -977,6 +1841,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+=======
+        <state relative-caret-position="696">
+          <caret line="131" column="63" selection-start-line="131" selection-start-column="63" selection-end-line="131" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/dao/ReservationRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/rental/service/CarReservationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 939e4c1b271f61bcd6be29de3f9a59fe0f5bbe99
         </state>
       </provider>
     </entry>

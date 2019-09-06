@@ -1,17 +1,20 @@
 package com.spring.rental.domain;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Getter
-@Setter
-@Builder
-@ToString
 @Table(name = "employee")
 public class Employee {
+    /**
+     * Employee table; employee performs car management action (CRUD)
+     */
 
 
 
@@ -40,5 +43,7 @@ public class Employee {
 
     @Column (name = "password")
     private String password;
+
+
 
 }

@@ -1,13 +1,15 @@
 package com.spring.rental.service;
 
-import com.spring.rental.dao.EmployeeRepository;
+import com.spring.rental.dao.CarRepository;
+import com.spring.rental.domain.Car;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-public class CarServiceImpl  {
+import java.util.Collection;
+import java.util.Set;
 
-
+@Service
+public class CarServiceImpl {
 
 
 }

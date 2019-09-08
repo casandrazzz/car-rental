@@ -39,15 +39,6 @@ public class Car {
     @Column(name = "seats")
     private int seats;
 
-   // public Car(long pk, int seats, String vehicleMake, String vehicleModel, String vehicleType) {
-   //     this.pk = pk;
-   //     this.seats = seats;
-   //     this.vehicleMake = vehicleMake;
-   //     this.vehicleModel = vehicleModel;
-   //     this.vehicleType = vehicleType;
-
-
-   // }
 }
 
 

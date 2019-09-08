@@ -1,8 +1,11 @@
 package com.spring.rental.service;
 
+import com.spring.rental.dao.CarRepository;
 import com.spring.rental.dao.ReservationRepository;
+import com.spring.rental.domain.Car;
 import com.spring.rental.dto.CarFilterDto;
-import com.spring.rental.exceptionsCarReservation.NoAvailableCarFound;
+import com.spring.rental.exceptionsCarReservation.*;
+import com.spring.rental.validation.ReservationDatesValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +20,7 @@ import static com.spring.rental.exceptionsCarReservation.CodesCarReservation.NO_
 public class CarFilterService {
 
     /** filters available cars list by transmission(automatic/manual) and
-     by vehicle type
+     by vehicle type and calculates price by type
 
 
      * @param pickUpDate       the pick-up date of the car
@@ -31,18 +34,30 @@ public class CarFilterService {
     @Autowired
     private ReservationRepository reservationRepository;
 
+    @Autowired
+    private CarRepository carRepository;
+
     public List<CarFilterDto> filterAvailableCars(LocalDate pickUpDate, LocalDate returnDate,
-                                                  String transmission, String vehicleType) {
+                                                  String transmission, String vehicleType) throws ReservationDatesException, ReturnDateBeforePickUpDateException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateTooFarInTheFutureException {
+
+
+        CarFilterDto carFilterDto = null;
+        ReservationDatesValidation.validateReservationDates(pickUpDate, returnDate);
         List<CarFilterDto> filterCars = new ArrayList<>();
         //Predicate<CarFilterDto> isAutomaticTransmission = e -> e.getTransmission().equalsIgnoreCase("Automatic");
 
+        List<Long> cars = reservationRepository.filterAvailableCars(pickUpDate, returnDate, transmission, vehicleType);
 
-        List<CarFilterDto> cars = reservationRepository.filterAvailableCars(pickUpDate, returnDate, transmission, vehicleType);
+        List<Car> carList = new ArrayList<>();
+        for (Long car : cars) {
+            Car carId = carRepository.findById(car).get();
+            carList.add(carId);
+        }
 
-        for (CarFilterDto car : cars) {
+        for (Car car : carList) {
 
-            CarFilterDto carFilterDto = new CarFilterDto();
-            carFilterDto.setPkCar(car.getPkCar());
+            carFilterDto = new CarFilterDto();
+            carFilterDto.setPkCar(car.getPkC());
             carFilterDto.setTransmission(car.getTransmission());
             carFilterDto.setVehicleMake(car.getVehicleMake());
             carFilterDto.setVehicleType(car.getVehicleType());
@@ -53,14 +68,6 @@ public class CarFilterService {
 
         }
 
-
-        //    List<CarFilterDto> result = new ArrayList<>();
-        //    for (CarFilterDto carFilterDto : listForFilter) {
-        //        if (automaticTransmission.test(carFilterDto)) {
-        //            result.add(carFilterDto);
-        //        }
-        //   }
-
         if (filterCars.isEmpty()) {
             try {
                 throw new NoAvailableCarFound("Sorry, no available cars were found.", NO_AVAILABLE_CAR_FOUND);
@@ -68,12 +75,6 @@ public class CarFilterService {
                 noAvailableCarFound.printStackTrace();
             }
 
-
-            // }
-            //   return  listForFilter.stream()
-            //           .filter(isAutomaticTransmission)
-            //           .collect(Collectors.toList());
-            // }
 
         }
         return filterCars;

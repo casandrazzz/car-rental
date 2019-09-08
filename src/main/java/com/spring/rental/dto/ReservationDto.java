@@ -1,5 +1,6 @@
 package com.spring.rental.dto;
 
+import com.spring.rental.enums.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -19,14 +20,8 @@ public class ReservationDto {
     private String location;
     private @DateTimeFormat(iso=DateTimeFormat.ISO.DATE) LocalDate pickUpDate;
     private @DateTimeFormat(iso=DateTimeFormat.ISO.DATE) LocalDate returnDate;
-    private long pkCar;
+
+    private long pkC;
     private long pkCostumer;
 
-    public ReservationDto(String location, LocalDate pickUpDate,LocalDate returnDate,long pkCar, long pkCostumer) {
-        this.location = location;
-        this.pickUpDate = pickUpDate;
-        this.returnDate = returnDate;
-        this.pkCar = pkCar;
-        this.pkCostumer = pkCostumer;
-    }
 }

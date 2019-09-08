@@ -13,7 +13,6 @@ public class ReservationDatesValidation {
 
     /**
      * validates pick up date and return date
-     * @param reservationDto            reservation DTO
      * @throws ReservationDatesException            exception
      * @throws PickUpDateInThePastException         exception
      * @throws ReturnDateInThePastException         exception
@@ -21,31 +20,31 @@ public class ReservationDatesValidation {
      * @throws ReturnDateTooFarInTheFutureException         exception
      */
 
-    public static void validateReservationDates(ReservationDto reservationDto) throws ReservationDatesException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateBeforePickUpDateException, ReturnDateTooFarInTheFutureException {
+    public static void validateReservationDates(LocalDate pickUpDate, LocalDate returnDate) throws ReservationDatesException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateBeforePickUpDateException, ReturnDateTooFarInTheFutureException {
         LocalDate currentDate = LocalDate.of(2019,8,1);
         LocalDate maximumReturnDate = LocalDate.of(2019, 12, 31);
         List<String> errors = new LinkedList<String>();
-        if (StringUtils.isEmpty(reservationDto.getPickUpDate())) {
+        if (StringUtils.isEmpty(pickUpDate)) {
             errors.add("Pick-up date is empty. Please select a pick-up date");
         } else {
-            if (reservationDto.getPickUpDate().isBefore(currentDate)) {
+            if (pickUpDate.isBefore(currentDate)) {
                 throw new PickUpDateInThePastException("Pick-up date is in the past", PICK_UP_DATE_IN_THE_PAST);
             }
 
-            if (StringUtils.isEmpty(reservationDto.getReturnDate())) {
+            if (StringUtils.isEmpty(returnDate)) {
                 errors.add("Return date is empty.Please select a return date");
             } else {
-                if (reservationDto.getReturnDate().isBefore(currentDate)) {
+                if (returnDate.isBefore(currentDate)) {
                     throw new ReturnDateInThePastException("Return date is in the past", RETURN_DATE_IN_THE_PAST);
                 }
             }
 
-            if (reservationDto.getReturnDate().isBefore(reservationDto.getPickUpDate())) {
+            if (returnDate.isBefore(pickUpDate)) {
                 throw new ReturnDateBeforePickUpDateException("Return date is before pick-up date. Please select another date", RETURN_DATE_BEFORE_PICK_UP_DATE);
 
             }
 
-            if (reservationDto.getReturnDate().isAfter(maximumReturnDate)) {
+            if (maximumReturnDate.isAfter(maximumReturnDate)) {
                 throw new ReturnDateTooFarInTheFutureException("Please select a date before 31st of December 2019", RETURN_DATE_TOO_FAR_IN_THE_FUTURE);
             }
 

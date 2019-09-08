@@ -18,10 +18,10 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 
     /**
      * queries for finding a car by id and finding all cars
-     * @param pkCar
+     * @param pkC
      * @return list of cars
      */
-    Car findById(@Param("pkCar") long pkCar);
+    Car findById(@Param("pkCar") long pkC);
 
 
 

@@ -14,9 +14,8 @@ import com.spring.rental.validation.ReservationDatesValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.time.LocalDate;
+import java.util.*;
 
 import static com.spring.rental.exceptionsCarReservation.CodesCarReservation.NO_AVAILABLE_CAR_FOUND;
 import static java.time.temporal.ChronoUnit.DAYS;
@@ -40,13 +39,13 @@ public class ReservationServiceImpl implements ReservationService {
     private CustomerRepository customerRepository;
 
     private CarReservationDto carReservationDto;
-
+    private ReservationDto reservationDto;
 
 
     @Override
-    public long calculateReservationCost(ReservationDto reservationDto, String vehicleType) throws ReservationDatesException, ReturnDateBeforePickUpDateException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateTooFarInTheFutureException {
+    public long calculateReservationCost(String vehicleType) {
 
-        ReservationDatesValidation.validateReservationDates(reservationDto);
+
         Reservation reservation = ReservationDtoToReservationTransformer.transform(reservationDto);
 
 
@@ -74,23 +73,22 @@ public class ReservationServiceImpl implements ReservationService {
                 return reservationPriceForVan * rentalPeriod;
 
         }
-     return calculateReservationCost(reservationDto, vehicleType);
+     return calculateReservationCost(vehicleType);
 
     }
 
 
     @Override
-    public void addReservation(ReservationDto reservationDto) throws ReservationDatesException,
-            ReturnDateBeforePickUpDateException,
-            PickUpDateInThePastException,
-            ReturnDateInThePastException,
-            ReturnDateTooFarInTheFutureException {
+    public void addReservation(ReservationDto reservationDto) {
 
 
-        ReservationDatesValidation.validateReservationDates(reservationDto);
+
         Reservation reservation = ReservationDtoToReservationTransformer.transform(reservationDto);
 
-        Car car = carRepository.findById(reservationDto.getPkCar());
+
+        Car car = carRepository.findById(reservationDto.getPkC());
+
+
         Customer customer = customerRepository.findById(reservationDto.getPkCostumer());
 
 
@@ -117,19 +115,26 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public List<ReservationDto> getReservationsByCustomer(long pk) {
+    public List<ReservationDto> getReservationsByCustomer(String emailAddres, String firstName, String lastName) {
 
         List<ReservationDto> reservationsByCustomer = new ArrayList<>();
 
-        List<Reservation> reservations = reservationRepository.getReservationsByCustomer(pk);
+        List<Long> reservations = reservationRepository.getReservationsByCustomer(emailAddres, firstName, lastName);
 
-        for (Reservation reservation : reservations) {
+        List<Reservation> reservationList = new ArrayList<>();
+        for (Long reservation : reservations){
+            Reservation reservationId = reservationRepository.findById(reservation).get();
+            reservationList.add(reservationId);
+        }
+
+
+        for (Reservation reservation : reservationList) {
 
             ReservationDto reservationDto = new ReservationDto();
             reservationDto.setLocation(reservation.getLocation());
             reservationDto.setPickUpDate(reservation.getPickUpDate());
             reservationDto.setReturnDate(reservation.getReturnDate());
-            reservationDto.setPkCar(reservation.getCar().getPkC());
+            reservationDto.setPkC(reservation.getCar().getPkC());
             reservationDto.setPkCostumer(reservation.getCustomer().getPk());
 
 

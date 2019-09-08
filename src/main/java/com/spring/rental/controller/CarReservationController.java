@@ -1,5 +1,4 @@
 package com.spring.rental.controller;
-import com.spring.rental.domain.Car;
 import com.spring.rental.dto.CarReservationDto;
 import com.spring.rental.dto.ReservationDto;
 import com.spring.rental.exceptionsCarReservation.*;
@@ -47,9 +46,11 @@ public class CarReservationController {
 
     }
 
-    @PostMapping(value = "/reservations/spec")
-    public List<ReservationDto> getReservationsByCustomer(long pk){
-       return reservationService.getReservationsByCustomer(pk);
+    @GetMapping(value = "/reservations")
+    public List<ReservationDto> getReservationsByCustomer(@RequestParam("emailAddress")String emailAddress,
+                                                          @RequestParam("firstName") String firstName,
+                                                          @RequestParam("lastName") String lastName){
+       return reservationService.getReservationsByCustomer(emailAddress, firstName, lastName);
 
 
     }

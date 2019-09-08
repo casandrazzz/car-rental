@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CarFilterDto {
+public class CarFilterDto  {
 
     /**
      * DTO for filtering list of available cars by transmission and vehicle type

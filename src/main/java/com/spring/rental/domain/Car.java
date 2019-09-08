@@ -39,7 +39,6 @@ public class Car {
     @Column(name = "seats")
     private int seats;
 
-
 }
 
 

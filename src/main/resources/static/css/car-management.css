@@ -1,0 +1,42 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    background-color: white;
+}
+
+.navbar .navbar-nav{
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.car-list > .car-card{
+    width:50%;
+    border: 1px solid #F4F5F7;
+    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+}
+
+.car-list > .car-card > div > .car-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.car-list > .car-card i {
+    color: #565353;
+}
+
+.text-sm{
+    font-size: small;
+}
+
+.cr-form{
+    padding:30px;
+    box-shadow: 0 3px 30px rgba(0, 0, 0, .15);
+    margin: 25px 0 40px;
+    border-radius:4px;
+}

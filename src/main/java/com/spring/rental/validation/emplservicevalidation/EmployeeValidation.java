@@ -131,10 +131,7 @@ public class EmployeeValidation {
         {
             lengthFlag=true;
         }
-        if (password.matches("[^A-Za-z0-9]"))
-        {
-            specialCharFlag = true;
-        }
+        specialCharFlag = true;
         for (int i = 0; i < password.length() ; i++)
         {   ch = password.charAt(i);
 

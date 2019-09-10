@@ -1,22 +1,21 @@
 package com.spring.rental.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table(name = "employee")
+@Getter
+@Setter
+@AllArgsConstructor
 public class Employee {
     /**
      * Employee table; employee performs car management action (CRUD)
      */
 
+    public Employee(){
 
+    }
 
 
     @Id

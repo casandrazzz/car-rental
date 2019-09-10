@@ -1,5 +1,6 @@
+var apiUrl = "localhost:8080"
+
 $(document).ready(function(){
-    getContact()
     getEmployees()
 });
 
@@ -80,19 +81,20 @@ function addEmployee() {
     });*/
 }
 
-function getContact(){
-    fields.forEach(function(field) {
-       $("ul#contact").append(`
-           <li class="list-group-item">
-               <h6 class="label">` + field + `</h6>
-               <h4>` + field + `</h6>
-           </li>
-       `);
-     });
-}
-
 function getEmployees(){
-    employees.forEach(function(employee) {
+    $.ajax({
+        url: apiUrl + '/employees',
+        method: "GET",
+        crossDomain: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        },
+        }).done(function (response) {
+            debugger
+        }).fail(function (response) {
+            debugger
+        })
+    /*employees.forEach(function(employee) {
        $('#employees').append(`
            <tr>
                <td>` + employee.Firstname + `</td>
@@ -105,5 +107,5 @@ function getEmployees(){
                </td>
            </tr>`
        );
-     });
+     });*/
 }

@@ -9,15 +9,16 @@ import com.spring.rental.service.EmployeeServiceImpl;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-@Controller
+@RestController
+@RequestMapping("/")
+@CrossOrigin(origins = "http://localhost:63342")
 public class EmployeeController {
 
     private static final Logger Log = Logger.getLogger(EmployeeServiceImpl.class);
@@ -29,15 +30,14 @@ public class EmployeeController {
 
 
 
-
     @PostMapping(value = "/employees")
-    public ModelAndView addEmployee(@ModelAttribute EmployeeInsertDto employeeInsertDto) throws InvalidEmployeeUsername, InvalidEmployeeAge,
+    public Employee addEmployee(@ModelAttribute EmployeeInsertDto employeeInsertDto) throws InvalidEmployeeUsername, InvalidEmployeeAge,
             InvalidEmployeeEmailAddress, InvalidEmployeeFirstAndLastName, InvalidEmployeePassword, InvalidEmployeePhoneNumber {
 
         try{
-            employeeServiceInterface.addEmployee(employeeInsertDto);
+            return employeeServiceInterface.addEmployee(employeeInsertDto);
 
-            System.out.println(" EmployeeServiceInterface inserted with success");
+            //System.out.println(" EmployeeServiceInterface inserted with success");
         } catch (InvalidEmployeeUsername invalidEmployeeUsername) {
             System.out.println(invalidEmployeeUsername.getLocalizedMessage() + ":" + invalidEmployeeUsername.getCode());
 
@@ -56,141 +56,45 @@ public class EmployeeController {
         } catch (InvalidEmployeeFirstAndLastName invalidEmployeeFirstAndLastName) {
             System.out.println(invalidEmployeeFirstAndLastName.getLocalizedMessage() + ":" + invalidEmployeeFirstAndLastName.getCode());
         }
-        employeeServiceInterface.addEmployee(employeeInsertDto);
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/");
+        return employeeServiceInterface.addEmployee(employeeInsertDto);
 
-        return modelAndView;
+        /*ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("redirect:/");*/
         // good
     }
 
-    /**
-     *
-     * @param username employeeServiceInterface's  username,
-     * the param we choose for this case to delete an employeeServiceInterface
-     * @return modelAndView after the delete happened or not.
-     */
-   /* @PostMapping(value = "/delete")
-    public ModelAndView deleteEmployee(@RequestParam("username") String username) throws InvalidEmployeeUsername {
-        if(employeeServiceInterface.deleteEmployee(username))
-        {
-            Log.info("Employee deleted");
-        } else {
-            Log.error("Employee could not be deleted");
-        }
+    @PostMapping(value = "/employees/{id}")
+    public Employee updateEmployee(@ModelAttribute EmployeeInsertDto employeeInsertDto, @PathVariable long id) {
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
+        Employee employee = employeeServiceInterface.findById(id);
 
-        return modelAndView;
+        employee.setFirstName(employeeInsertDto.getFirstName());
+        employee.setLastName(employeeInsertDto.getLastName());
+        employee.setAge(employeeInsertDto.getAge());
+        employee.setPhoneNumber(employeeInsertDto.getPhoneNumber());
+        employee.setEmailAddress(employeeInsertDto.getEmailAddress());
 
-    }*/
-/*
-    @PostMapping(value = "/update")
-    public  ModelAndView updateEmployeeFirstName(@RequestParam("firstName") String firstName)
-    {
+        return employeeServiceInterface.updateEmployee(employee);
 
-        //TODO search baeldung
-
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        return modelAndView;
+        /*ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("redirect:/");*/
+        // good
+    }
+    @DeleteMapping(value = "/delete/{id}")
+    public  void deleteEmployee( @PathVariable long id) throws NoEmployeeFound {
+         employeeServiceInterface.deleteEmployee(id);
 
 
     }
-    @PostMapping(value = "/update")
-    public  ModelAndView updateEmployeeLastName(@RequestParam("lastName") String lastName)
-    {
 
 
-
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        return modelAndView;
-
-
+    @CrossOrigin(origins = "http://localhost:63342")
+    @RequestMapping(method = RequestMethod.GET, value = "/employees")
+    public List<EmployeeDto> getAllemployes() throws NoEmployeeFound {
+        return employeeServiceInterface.getEmployees();
     }
-    @PostMapping(value = "/update")
-    public  ModelAndView updateEmployeeUsername(@RequestParam("username") String username)
-    {
-
-
-
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        return modelAndView;
-
-
-    }
-    @PostMapping(value = "/update")
-    public  ModelAndView updateEmployeEmailAddress(@RequestParam("emailAddress") String emailAddress)
-    {
-
-
-
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        return modelAndView;
-
-    }
-    @PostMapping(value = "/update")
-    public  ModelAndView updateEmployeeAge(@RequestParam("age") Integer age)
-    {
-
-
-
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        return modelAndView;
-
-    }
-    @PostMapping(value = "/update")
-    public  ModelAndView updateEmployeePassword(@RequestParam("password") String password)
-    {
-
-
-
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        return modelAndView;
-
-    }
-    @PostMapping(value = "/update")
-    public  ModelAndView updateEmployeePhoneNumber(@RequestParam("phoneNumber") String phoneNumber)
-    {
-
-
-
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        return modelAndView;
-
-    }
-
-*/
-
-
-
-@PostMapping("/employees")
-    public List<EmployeeDto> getAllemployes( @ModelAttribute String firstName, @ModelAttribute String lastName,
-                                             @ModelAttribute int age, @ModelAttribute String phoneNumber, @ModelAttribute String emailAddress) throws NoEmployeeFound {
-    return employeeServiceInterface.getEmployees(firstName, lastName,age,phoneNumber,emailAddress);
-}
-/*
-@PostMapping("/deleteemployees")
-   List<EmployeeDto> deleteEmployee ( long pk)
-{
-    return  employeeServiceInterface.deleteEmployee(pk);
-}*/ //TODO redo this controller
-
+    
 
 
 

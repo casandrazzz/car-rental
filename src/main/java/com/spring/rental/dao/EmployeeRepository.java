@@ -5,8 +5,11 @@ import com.spring.rental.domain.Employee;
 
 import com.spring.rental.domain.Employee;
 import com.spring.rental.dto.EmployeeDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
@@ -17,8 +20,7 @@ import java.util.List;
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     @Query(value ="SELECT * FROM Employee", nativeQuery = true)
-    List <Employee> getEmployees(@Param("firstName") String firstName, @Param("lastName") String lastName,@Param("age") int age
-            , @Param("phoneNumber") String phoneNumber, @Param("emailAddress") String emailAddress);
+    List <Employee> getEmployees();
 
 
     @Query(value = "SELECT * FROM Employee e WHERE e.firstName =:firstName", nativeQuery = true)
@@ -40,6 +42,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 
     @Query(value = "delete from Employee e where e.pk=:pk")
-    List<EmployeeDto> deleteEmployee(@Param("pk") long pk);
+    Employee deleteEmployee(@Param("pk") long pk);
 
 }

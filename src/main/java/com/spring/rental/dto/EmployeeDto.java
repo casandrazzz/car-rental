@@ -10,6 +10,7 @@ import lombok.*;
 @AllArgsConstructor
 public class EmployeeDto {
 
+    private long Id;
     private  String firstName;
     private String lastName;
     private  int age;

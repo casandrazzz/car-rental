@@ -1,111 +1,46 @@
-var apiUrl = "localhost:8080"
+var apiUrl = "http://localhost:8080"
 
 $(document).ready(function(){
-    getEmployees()
-});
-
-$(document).ready(function() {
-    $("#create-employee").submit(function (event) {
-        event.preventDefault();
-        addEmployee();
+    getEmployees();
+    $( "input[name=search]" ).on('keypress', function(e) {
+    if(e.which == 13) {
+      var term = $(this).val()
+      searchEmployees(term)
+    }
     });
 });
-
-
-var fields = ['Adresa','Web','Telefon','Email']
-var employees = [
-    {
-        'Id': 1,
-        'Firstname': 'Alahu',
-        'Lastname': 'Ahbar',
-        'Age': 0,
-        'Phone': '0756222345',
-        'Email': 'bomba@gmail.com'
-    },
-    {
-        'Id': 2,
-        'Firstname': 'Mihai',
-        'Lastname': 'Viteazu',
-        'Age': 69,
-        'Phone': '0756231234',
-        'Email': 'boss@gmail.com'
-    },
-    {
-        'Id': 3,
-        'Firstname': 'Eeee',
-        'Lastname': 'BBbbb',
-        'Age': 666,
-        'Phone': '0788899112',
-        'Email': 'Vvvvv@gmail.com'
-    }
-]
-
-function addEmployee() {
-    var firstname = $("input[title='firstname']").val();
-    var lastname = $("input[title='lastname']").val();
-    var age = $("input[title='age']").val();
-    var phone = $("input[title='phone']").val();
-    var email = $("input[title='email']").val();
-
-    employees.push({
-        'Firstname': firstname,
-        'Lastname': lastname,
-        'Age': age,
-        'Phone': phone,
-        'Email': email
-    });
-
-    debugger
-
-    window.location.href = "employees.html";
-    /*if(title == "" || remindDate == ""){
-        bootstrap_alert.warning("Title and/or date can't be empty!");
-        return
-    }
-
-    var data = {
-        'title': title,
-        'remindDate': remindDate,
-
-    };
-
-    $.ajax({
-        url: apiUrl + "/reminders",
-        method: "POST",
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(data)
-    }).done(function (response) {
-        bootstrap_alert.success('Reminder added successfully!');
-    }).fail(function (jqXHR, textStatus, error) {
-        bootstrap_alert.error(error);
-    });*/
-}
 
 function getEmployees(){
     $.ajax({
         url: apiUrl + '/employees',
-        method: "GET",
-        crossDomain: true,
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        },
-        }).done(function (response) {
-            debugger
-        }).fail(function (response) {
-            debugger
-        })
-    /*employees.forEach(function(employee) {
-       $('#employees').append(`
-           <tr>
-               <td>` + employee.Firstname + `</td>
-               <td>` + employee.Lastname + `</td>
-               <td>` + employee.Age + `</td>
-               <td>` + employee.Phone + `</td>
-               <td>` + employee.Email + `</td>
-               <td>
-                <a href='#' class='fa fa-trash delete'>
-               </td>
-           </tr>`
-       );
-     });*/
+        method: "GET"
+    }).done(function (response) {
+        reloadEmployees(response)
+    }).fail(function (response) {
+        console.log(response)
+    })
+}
+
+function reloadEmployees(employees){
+    $('#employees tbody').empty();
+    employees.forEach(function(employee) {
+                var row = `<tr>
+                             <td>` + employee.firstName + `</td>
+                             <td>` + employee.lastName + `</td>
+                             <td>` + employee.age + `</td>
+                             <td>` + employee.phoneNumber + `</td>
+                             <td>` + employee.emailAddress + `</td></tr>`;
+                       $('#employees').append(row);
+                     });
+}
+
+function searchEmployees(term){
+    $.ajax({
+        url: apiUrl + '/employees/search/' + term,
+        method: "GET"
+    }).done(function (response) {
+        reloadEmployees(response)
+    }).fail(function (response) {
+        console.log(response)
+    })
 }

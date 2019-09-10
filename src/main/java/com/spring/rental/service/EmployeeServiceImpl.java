@@ -46,6 +46,8 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
         employee.setAge(employeeInsertDto.getAge());
         employee.setPhoneNumber(employeeInsertDto.getPhoneNumber());
         employee.setEmailAddress(employeeInsertDto.getEmailAddress());
+        employee.setUsername(employeeInsertDto.getUsername());
+        employee.setPassword(employeeInsertDto.getPassword());
 
         //Employee employee = employeeRepository.findById(employeeInsertDto.getId()).get();
 
@@ -91,6 +93,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
         for (Employee employee : employees) {
             EmployeeDto employeeDto = new EmployeeDto();
 
+            employeeDto.setId(employee.getPk());
             employeeDto.setFirstName(employee.getFirstName());
             employeeDto.setLastName(employee.getLastName());
             employeeDto.setAge(employee.getAge());
@@ -108,6 +111,33 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
         return availableEmployees;
         // This one is converted
 
+
+    }
+
+    @Override
+    public List<Employee> getAllEmployees() throws NoEmployeeFound {
+
+
+        return employeeRepository.getEmployees();
+
+
+    }
+
+    @Override
+    public EmployeeDto getEmployee(long id) throws NoEmployeeFound {
+
+        Employee employee = employeeRepository.getOne(id);
+
+        EmployeeDto employeeDto = new EmployeeDto();
+
+        employeeDto.setId(employee.getPk());
+        employeeDto.setFirstName(employee.getFirstName());
+        employeeDto.setLastName(employee.getLastName());
+        employeeDto.setAge(employee.getAge());
+        employeeDto.setPhoneNumber(employee.getPhoneNumber());
+        employeeDto.setEmailAddress(employeeDto.getEmailAddress());
+
+        return employeeDto;
 
     }
 

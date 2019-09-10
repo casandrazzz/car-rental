@@ -11,40 +11,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="utils.js"></script>
-    <script src="script.js"></script>
+    <script src="login.js"></script>
 </head>
 <body>
 <ul class="nav">
-    <li class="nav-item">
-        <a class="nav-link active" href="home.html">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active" href="login.html">Login</a>
-    </li>
+<li class="nav-item">
+    <a class="nav-link active" href="home.html">Home</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link active" href="login.html">Login</a>
+</li>
 </ul>
 <div class="row">
     <div class="col-md-8 offset-md-2">
-        <div class="input-group mb-3">
-            <input name="search" type="text" class="form-control" placeholder="Search">
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-8 offset-md-2">
-        <table class="table" id="employees">
-            <thead>
-            <tr>
-                <th scope="col">Firstname</th>
-                <th scope="col">Lastname</th>
-                <th scope="col">Age</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Email</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <form id="login">
+            <div class="form-group">
+                <label for="inputUsername">Username</label>
+                <input type="text" class="form-control" name= "username" title="username" id="inputUsername" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" class="form-control" name= "password" title="password" id="inputPassword" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
     </div>
 </div>
 </body>

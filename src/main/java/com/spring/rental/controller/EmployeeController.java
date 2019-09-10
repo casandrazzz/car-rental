@@ -8,20 +8,31 @@ import com.spring.rental.service.EmployeeServiceInterface;
 import com.spring.rental.service.EmployeeServiceImpl;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/")
-@CrossOrigin(origins = "http://localhost:63342")
+@RequestMapping("/employees")
+@CrossOrigin
 public class EmployeeController {
 
-    private static final Logger Log = Logger.getLogger(EmployeeServiceImpl.class);
+    //private static final Logger Log = Logger.getLogger(EmployeeServiceImpl.class);
 
     @Autowired
     private EmployeeServiceInterface employeeServiceInterface;
@@ -30,12 +41,12 @@ public class EmployeeController {
 
 
 
-    @PostMapping(value = "/employees")
-    public Employee addEmployee(@ModelAttribute EmployeeInsertDto employeeInsertDto) throws InvalidEmployeeUsername, InvalidEmployeeAge,
+    @PostMapping()
+    public ResponseEntity<?> addEmployee(@Valid @RequestBody EmployeeInsertDto employeeInsertDto) throws InvalidEmployeeUsername, InvalidEmployeeAge,
             InvalidEmployeeEmailAddress, InvalidEmployeeFirstAndLastName, InvalidEmployeePassword, InvalidEmployeePhoneNumber {
 
         try{
-            return employeeServiceInterface.addEmployee(employeeInsertDto);
+            return new ResponseEntity<>(employeeServiceInterface.addEmployee(employeeInsertDto),HttpStatus.CREATED);
 
             //System.out.println(" EmployeeServiceInterface inserted with success");
         } catch (InvalidEmployeeUsername invalidEmployeeUsername) {
@@ -57,15 +68,11 @@ public class EmployeeController {
             System.out.println(invalidEmployeeFirstAndLastName.getLocalizedMessage() + ":" + invalidEmployeeFirstAndLastName.getCode());
         }
 
-        return employeeServiceInterface.addEmployee(employeeInsertDto);
-
-        /*ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/");*/
-        // good
+        return new ResponseEntity<>(employeeServiceInterface.addEmployee(employeeInsertDto),HttpStatus.CREATED);
     }
 
-    @PostMapping(value = "/employees/{id}")
-    public Employee updateEmployee(@ModelAttribute EmployeeInsertDto employeeInsertDto, @PathVariable long id) {
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateEmployee(@Valid @RequestBody EmployeeInsertDto employeeInsertDto, @PathVariable long id) {
 
         Employee employee = employeeServiceInterface.findById(id);
 
@@ -75,27 +82,59 @@ public class EmployeeController {
         employee.setPhoneNumber(employeeInsertDto.getPhoneNumber());
         employee.setEmailAddress(employeeInsertDto.getEmailAddress());
 
-        return employeeServiceInterface.updateEmployee(employee);
-
-        /*ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/");*/
-        // good
-    }
-    @DeleteMapping(value = "/delete/{id}")
-    public  void deleteEmployee( @PathVariable long id) throws NoEmployeeFound {
-         employeeServiceInterface.deleteEmployee(id);
-
+        return new ResponseEntity<>(employeeServiceInterface.updateEmployee(employee),HttpStatus.OK);
 
     }
 
+    @DeleteMapping("/{id}")
+    public  ResponseEntity<?> deleteEmployee( @PathVariable long id) throws NoEmployeeFound {
+        employeeServiceInterface.deleteEmployee(id);
 
-    @CrossOrigin(origins = "http://localhost:63342")
-    @RequestMapping(method = RequestMethod.GET, value = "/employees")
-    public List<EmployeeDto> getAllemployes() throws NoEmployeeFound {
-        return employeeServiceInterface.getEmployees();
+        return new ResponseEntity<>(HttpStatus.OK);
     }
-    
 
+
+    @GetMapping()
+    public ResponseEntity<List<Employee>> getAllEmployees() {
+        List<Employee> employees = null;
+        try {
+            employees = employeeServiceInterface.getAllEmployees();
+        } catch (NoEmployeeFound noEmployeeFound) {
+            noEmployeeFound.printStackTrace();
+        }
+        return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<EmployeeDto> getEmployee(@PathVariable long id) {
+        EmployeeDto employeeDto = null;
+        try {
+            employeeDto = employeeServiceInterface.getEmployee(id);
+        } catch (NoEmployeeFound noEmployeeFound) {
+            noEmployeeFound.printStackTrace();
+        }
+        return new ResponseEntity<>(employeeDto, HttpStatus.OK);
+    }
+
+    @GetMapping("/search/{term}")
+    public ResponseEntity<List<Employee>> searchEmployee(@PathVariable String term) {
+        List<Employee> employees = null;
+        try {
+            employees = employeeServiceInterface.getAllEmployees()
+                    .stream()
+                    .filter((employee) -> employee.getFirstName().contains(term) && employee.getLastName().contains(term))
+                    .collect(Collectors.toList());
+        } catch (NoEmployeeFound noEmployeeFound) {
+            noEmployeeFound.printStackTrace();
+        }
+        return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
+
+    @RequestMapping(method = RequestMethod.OPTIONS)
+    public ResponseEntity options(HttpServletResponse response) {
+        response.setHeader("Allow", "HEAD,GET,PUT,OPTIONS,POST,DELETE");
+        return new ResponseEntity(HttpStatus.OK);
+    }
 
 
 }

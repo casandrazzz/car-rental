@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="utils.js"></script>
-    <script src="addEmployee.js"></script>
+    <script src="updateEmployee.js"></script>
 </head>
 <body>
 <ul class="nav">
@@ -31,7 +31,7 @@
 </ul>
 <div class="row">
     <div class="col-md-8 offset-md-2">
-        <form id="create-employee">
+        <form id="update-employee">
             <div class="form-group">
                 <label for="inputFirstname">Firstname</label>
                 <input type="text" class="form-control" name= "firstname" title="firstname" id="inputFirstname" placeholder="Enter firstname">
@@ -52,14 +52,7 @@
                 <label for="inputEmail">Email address</label>
                 <input type="text" class="form-control" id="inputEmail" name="email" title="email" placeholder="Enter email address">
             </div>
-            <div class="form-group">
-                <label for="inputUsername">Username</label>
-                <input type="text" class="form-control" id="inputUsername" name="username" title="username" placeholder="Enter username">
-            </div>
-            <div class="form-group">
-                <label for="inputPassword">Password</label>
-                <input type="text" class="form-control" id="inputPassword" name="password" title="password" placeholder="Enter password">
-            </div>
+
             <button type="submit" class="btn btn-primary">Save</button>
             <a class="btn btn-light" href="employees.html" role="button">Back</a>
         </form>

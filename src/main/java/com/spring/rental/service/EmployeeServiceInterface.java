@@ -21,6 +21,9 @@ public interface EmployeeServiceInterface {
     void deleteEmployee(long id) throws NoEmployeeFound;
 
     List<EmployeeDto> getEmployees() throws NoEmployeeFound;
+    List<Employee> getAllEmployees() throws NoEmployeeFound;
+
+    EmployeeDto getEmployee(long id) throws NoEmployeeFound;
 
 /*
     EmployeeFindResults<EmployeeInsertDto> search(

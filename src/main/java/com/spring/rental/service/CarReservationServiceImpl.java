@@ -4,8 +4,9 @@ import com.spring.rental.dao.CarRepository;
 import com.spring.rental.dao.ReservationRepository;
 import com.spring.rental.domain.Car;
 import com.spring.rental.dto.CarReservationDto;
-import com.spring.rental.exceptionsCarReservation.NoAvailableCarFound;
+import com.spring.rental.exceptionsCarReservation.*;
 import com.spring.rental.transformer.CarEntityToCarReservationDtoTransformer;
+import com.spring.rental.validation.ReservationDatesValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,19 +35,21 @@ public class CarReservationServiceImpl implements CarReservationService {
     private ReservationRepository reservationRepository;
 
            @Override
-    public Set<CarReservationDto> getAvailableCars(LocalDate pickUpDate, LocalDate returnDate) throws NoAvailableCarFound {
+    public Set<CarReservationDto> getAvailableCars(LocalDate pickUpDate, LocalDate returnDate) throws NoAvailableCarFound, ReservationDatesException, ReturnDateBeforePickUpDateException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateTooFarInTheFutureException {
               Set<CarReservationDto> availableCars = new HashSet<>();
 
-
+               ReservationDatesValidation.validateReservationDates(pickUpDate, returnDate);
                Set<Long> cars = reservationRepository.getAvailableCars(pickUpDate, returnDate);
 
                Set<Car> cars2 = new HashSet<>();
                for (Long car : cars) {
+                   System.out.println(car);
                  Car carId = carRepository.findById(car).get();
                  cars2.add(carId);}
 
                for (Car car: cars2){
                 CarReservationDto carReservationDto = new CarReservationDto();
+                carReservationDto.setId(car.getPkC());
                  carReservationDto.setTransmission(car.getTransmission());
                carReservationDto.setVehicleMake(car.getVehicleMake());
                  carReservationDto.setVehicleModel(car.getVehicleModel());

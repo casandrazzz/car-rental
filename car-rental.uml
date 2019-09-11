@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="72.0">com.spring.rental.controller</node>
+    <node x="0.0" y="144.0">com.spring.rental.domain</node>
+    <node x="0.0" y="216.0">com.spring.rental.dao</node>
+    <node x="0.0" y="0.0">com.spring.rental.configuration</node>
+    <node x="2.727272727272748" y="254.18181818181816">com.spring.rental.dto</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.1" x="390.45454545454544" y="169.54545454545453" />
+  <SelectedNodes>
+    <node>com.spring.rental.dto</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

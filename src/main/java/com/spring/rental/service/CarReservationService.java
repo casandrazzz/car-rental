@@ -3,7 +3,7 @@ package com.spring.rental.service;
 
 import com.spring.rental.domain.Car;
 import com.spring.rental.dto.CarReservationDto;
-import com.spring.rental.exceptionsCarReservation.NoAvailableCarFound;
+import com.spring.rental.exceptionsCarReservation.*;
 import org.springframework.data.repository.query.Param;
 
 
@@ -19,6 +19,6 @@ public interface CarReservationService {
         * @throws NoAvailableCarFound
         */
 
-       Set<CarReservationDto> getAvailableCars(LocalDate pickUpDate, LocalDate returnDate) throws NoAvailableCarFound;
+       Set<CarReservationDto> getAvailableCars(LocalDate pickUpDate, LocalDate returnDate) throws NoAvailableCarFound, ReservationDatesException, ReturnDateBeforePickUpDateException, PickUpDateInThePastException, ReturnDateInThePastException, ReturnDateTooFarInTheFutureException;
        Set<CarReservationDto> getAvailableCarReservation(@Param("pickUpDate") LocalDate pickUpDate, @Param("returnDate") LocalDate returnDate);
 }

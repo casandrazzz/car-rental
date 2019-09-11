@@ -43,7 +43,6 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
                                                 @Param("lastName") String lastName);
 
     Reservation findByLocation(String location);
-
 }
 
 

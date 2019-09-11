@@ -7,7 +7,9 @@ import com.spring.rental.domain.Car;
 import com.spring.rental.domain.Customer;
 import com.spring.rental.domain.Reservation;
 import com.spring.rental.dto.CarReservationDto;
+import com.spring.rental.dto.CustomerReservationDto;
 import com.spring.rental.dto.ReservationDto;
+import com.spring.rental.enums.VehicleType;
 import com.spring.rental.exceptionsCarReservation.*;
 import com.spring.rental.transformer.ReservationDtoToReservationTransformer;
 import com.spring.rental.validation.ReservationDatesValidation;
@@ -38,16 +40,8 @@ public class ReservationServiceImpl implements ReservationService {
     @Autowired
     private CustomerRepository customerRepository;
 
-    private CarReservationDto carReservationDto;
-    private ReservationDto reservationDto;
-
-
     @Override
-    public long calculateReservationCost(String vehicleType) {
-
-
-        Reservation reservation = ReservationDtoToReservationTransformer.transform(reservationDto);
-
+    public long calculateReservationCost(LocalDate pickUpDate, LocalDate returnDate, VehicleType vehicleType) {
 
         long reservationPriceForConvertible = 20;
         long reservationPriceForCoupe = 20;
@@ -55,26 +49,25 @@ public class ReservationServiceImpl implements ReservationService {
         long reservationPriceForPickUP = 30;
         long reservationPriceForSUV = 30;
         long reservationPriceForVan = 35;
-        long rentalPeriod = DAYS.between(reservation.pickUpDate, reservation.returnDate);
+        long rentalPeriod = DAYS.between(pickUpDate, returnDate);
 
 
-        switch (carReservationDto.getVehicleType()) {
-            case "Convertible":
+        switch (vehicleType) {
+            case CONVERTIBLE:
                 return reservationPriceForConvertible * rentalPeriod;
-            case "Coupe":
+            case COUPE:
                 return reservationPriceForCoupe * rentalPeriod;
-            case "Limousine":
+            case LIMOUSINE:
                 return reservationPriceForLimousine * rentalPeriod;
-            case"Pick-up":
+            case PICKUP:
                 return reservationPriceForPickUP*rentalPeriod;
-            case"SUV"    :
+            case SUV   :
                 return reservationPriceForSUV * rentalPeriod;
-            case "Van" :
+            case VAN :
                 return reservationPriceForVan * rentalPeriod;
 
         }
-     return calculateReservationCost(vehicleType);
-
+     return 0;
     }
 
 
@@ -86,7 +79,7 @@ public class ReservationServiceImpl implements ReservationService {
         Reservation reservation = ReservationDtoToReservationTransformer.transform(reservationDto);
 
 
-        Car car = carRepository.findById(reservationDto.getPkC());
+        Car car = carRepository.findById(reservationDto.getPkCar());
 
 
         Customer customer = customerRepository.findById(reservationDto.getPkCostumer());
@@ -106,6 +99,7 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public void deleteReservation(long pk) {
+        reservationRepository.deleteById(pk);
 
     }
 
@@ -115,40 +109,38 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public List<ReservationDto> getReservationsByCustomer(String emailAddres, String firstName, String lastName) {
+    public List<CustomerReservationDto> getReservationsByCustomer(String emailAddres, String firstName, String lastName) {
 
-        List<ReservationDto> reservationsByCustomer = new ArrayList<>();
+        List<CustomerReservationDto> reservationsByCustomer = new ArrayList<>();
 
         List<Long> reservations = reservationRepository.getReservationsByCustomer(emailAddres, firstName, lastName);
 
         List<Reservation> reservationList = new ArrayList<>();
-        for (Long reservation : reservations){
-            Reservation reservationId = reservationRepository.findById(reservation).get();
-            reservationList.add(reservationId);
-        }
-
-
-        for (Reservation reservation : reservationList) {
-
-            ReservationDto reservationDto = new ReservationDto();
+        for (Long reservationKey : reservations){
+            Reservation reservation = reservationRepository.findById(reservationKey).get();
+            CustomerReservationDto reservationDto = new CustomerReservationDto();
+            reservationDto.setId(reservation.getPk());
             reservationDto.setLocation(reservation.getLocation());
             reservationDto.setPickUpDate(reservation.getPickUpDate());
             reservationDto.setReturnDate(reservation.getReturnDate());
-            reservationDto.setPkC(reservation.getCar().getPkC());
-            reservationDto.setPkCostumer(reservation.getCustomer().getPk());
+            reservationDto.setVehicleType(reservation.getCar().getVehicleType());
+            reservationDto.setVehicleMake(reservation.getCar().getVehicleMake());
 
 
             reservationsByCustomer.add(reservationDto);
+        }
+
+
+
             if (reservationsByCustomer.isEmpty()) {
                 try {
-                    throw new NoAvailableCarFound("Sorry, no available cars were found.", NO_AVAILABLE_CAR_FOUND);
+                    throw new NoAvailableCarFound("Sorry, no reservations were found.", NO_AVAILABLE_CAR_FOUND);
                 } catch (NoAvailableCarFound noAvailableCarFound) {
                     noAvailableCarFound.printStackTrace();
                 }
             }
 
 
-        }
         return reservationsByCustomer;
 
     }

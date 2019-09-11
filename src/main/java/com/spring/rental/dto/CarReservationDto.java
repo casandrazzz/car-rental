@@ -20,6 +20,7 @@ public class CarReservationDto {
     private String vehicleModel;
     private String vehicleType;
     private int seats;
+    private long id;
 
     public CarReservationDto(String vehicleType, String vehicleMake, String vehicleModel, String transmission, int seats){
         this.vehicleType = vehicleType;

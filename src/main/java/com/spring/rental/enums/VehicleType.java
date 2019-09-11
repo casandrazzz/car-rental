@@ -6,5 +6,5 @@ public enum VehicleType {
     SUV,
     COUPE,
     VAN,
-    PICKUP;
+    PICKUP
 }

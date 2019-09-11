@@ -1,7 +1,6 @@
 package com.spring.rental.enums;
 
 public enum VehicleMake {
-
     VOLKSWAGEN,
     BUICK,
     FORD,
@@ -13,6 +12,5 @@ public enum VehicleMake {
     RANGE_ROVER,
     CHEVROLET,
     BMW,
-    SMART;
-
+    SMART
 }

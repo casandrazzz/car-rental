@@ -25,7 +25,7 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public List<CarDto> findAll() {
-        return carRepository.findAll().stream().map(carMapper::toDto).collect(Collectors.toList());
+        return carRepository.findAll().stream().map(car ->  carMapper.toDto(car)).collect(Collectors.toList());
     }
 
     @Override

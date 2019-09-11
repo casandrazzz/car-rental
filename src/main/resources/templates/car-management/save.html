@@ -32,21 +32,30 @@
                     </div>
                     <div class="form-group">
                         <label>Car type</label>
-                        <input type="text" class="form-control"
-                               placeholder=""
-                               th:field="*{vehicleType}">
+                        <select class="form-control"
+                                name="vehicleType">
+                            <option th:each="vehicleType : ${T(com.spring.rental.enums.VehicleType).values()}"
+                                    th:text="${vehicleType}"
+                                    th:selected="${#strings.equalsIgnoreCase(vehicleType, car.vehicleType)}">
+                            </option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Transmission</label>
-                        <input type="text" class="form-control"
-                               placeholder=""
-                               th:field="*{transmission}">
+                        <select class="form-control"
+                                name="transmission">
+                            <option th:each="transmission : ${T(com.spring.rental.enums.Transmission).values()}"
+                                    th:text="${transmission}"
+                                    th:selected="${#strings.equalsIgnoreCase(transmission, car.transmission)}">
+                            </option>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label>Number of seats</label>
-                        <input type="number" class="form-control"
-                               placeholder=""
-                               th:field="*{seats}">
+                    <div class=" form-group
+                            ">
+                            <label>Number of seats</label>
+                            <input type="number" class="form-control"
+                                   placeholder=""
+                                   th:field="*{seats}">
                     </div>
                     <input type="hidden" th:field="*{id}">
                     <div class="d-flex justify-content-center">

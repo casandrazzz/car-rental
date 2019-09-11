@@ -16,9 +16,6 @@ public class Employee {
      * Employee table; employee performs car management action (CRUD)
      */
 
-
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long pk;
@@ -43,7 +40,5 @@ public class Employee {
 
     @Column (name = "password")
     private String password;
-
-
 
 }

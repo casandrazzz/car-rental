@@ -19,7 +19,5 @@ public enum VehicleModel {
     FOR_TWO,
     YARIS_IA,
     EXPRESS,
-    TACOMA;
-
-
+    TACOMA
 }

@@ -17,13 +17,13 @@ public interface EmployeeServiceInterface {
 
 
     Employee findById(long id);
-    Employee updateEmployee(Employee employee);
+    Employee updateEmployee(Employee employee) throws InvalidEmployeeFirstAndLastName, InvalidEmployeePhoneNumber, InvalidEmployeePassword, InvalidEmployeeUsername, InvalidEmployeeAge, InvalidEmployeeEmailAddress;
     void deleteEmployee(long id) throws NoEmployeeFound;
 
     List<EmployeeDto> getEmployees() throws NoEmployeeFound;
     List<Employee> getAllEmployees() throws NoEmployeeFound;
 
-    EmployeeDto getEmployee(long id) throws NoEmployeeFound;
+    Employee getEmployee(long id) throws NoEmployeeFound;
 
 /*
     EmployeeFindResults<EmployeeInsertDto> search(

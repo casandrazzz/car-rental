@@ -65,17 +65,17 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
 
     }
 
-    public Employee updateEmployee(Employee employee) {
- /*
-        EmployeeValidation.firstNameValidation(employeeInsertDto);
-        EmployeeValidation.lastNameValidation(employeeInsertDto);
-        EmployeeValidation.phoneNumberOfEmployeeValidation(employeeInsertDto);
-        EmployeeValidation.employeePasswordValidation(employeeInsertDto);
-        EmployeeValidation.usernameValidation(employeeInsertDto);
-        EmployeeValidation.employeeAgeValidation(employeeInsertDto);
-        EmployeeValidation.employeeEmailAddressValidation(employeeInsertDto);*/
+    public Employee updateEmployee(Employee employee) throws InvalidEmployeeFirstAndLastName, InvalidEmployeePhoneNumber, InvalidEmployeePassword, InvalidEmployeeUsername, InvalidEmployeeAge, InvalidEmployeeEmailAddress {
 
-        return employeeRepository.save(employee);
+       EmployeeValidation.firstNameValidation(employee);
+        EmployeeValidation.lastNameValidation(employee);
+        EmployeeValidation.phoneNumberOfEmployeeValidation(employee);
+        EmployeeValidation.employeePasswordValidation(employee);
+        EmployeeValidation.usernameValidation(employee);
+        EmployeeValidation.employeeAgeValidation(employee);
+        EmployeeValidation.employeeEmailAddressValidation(employee);
+
+       return employeeRepository.save(employee);
 
 
     }
@@ -124,20 +124,20 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
     }
 
     @Override
-    public EmployeeDto getEmployee(long id) throws NoEmployeeFound {
+    public Employee getEmployee(long id) throws NoEmployeeFound {
 
-        Employee employee = employeeRepository.getOne(id);
+       return employeeRepository.getEmployees().stream()
+               .filter(employee -> employee.getPk() == id)
+               .findFirst()
+               .get();
 
-        EmployeeDto employeeDto = new EmployeeDto();
+       /*Employee employee = employeeRepository.getOne(id);
 
-        employeeDto.setId(employee.getPk());
-        employeeDto.setFirstName(employee.getFirstName());
-        employeeDto.setLastName(employee.getLastName());
-        employeeDto.setAge(employee.getAge());
-        employeeDto.setPhoneNumber(employee.getPhoneNumber());
-        employeeDto.setEmailAddress(employeeDto.getEmailAddress());
+       return employeeRepository.getOne(id);*/
 
-        return employeeDto;
+
+
+
 
     }
 

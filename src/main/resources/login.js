@@ -11,7 +11,7 @@ function login() {
     var username = $("input[title='username']").val();
     var password = $("input[title='password']").val();
     if(username=="admin" && password=="password"){
-        document.cookie = "user=admin";
+        Cookies.set('user',username)
         window.location.href="employees.html"
     }
 }

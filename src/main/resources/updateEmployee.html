@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="utils.js"></script>
     <script src="updateEmployee.js"></script>
 </head>
@@ -24,9 +25,6 @@
     </li>
     <li class="nav-item">
         <a class="nav-link active" href="addEmployee.html">Add employee</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active" href="updateEmployee.html">Update employee</a>
     </li>
 </ul>
 <div class="row">
@@ -51,6 +49,14 @@
             <div class="form-group">
                 <label for="inputEmail">Email address</label>
                 <input type="text" class="form-control" id="inputEmail" name="email" title="email" placeholder="Enter email address">
+            </div>
+            <div class="form-group">
+                <label for="inputUsername">Username</label>
+                <input type="text" class="form-control" id="inputUsername" name="username" title="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="text" class="form-control" id="inputPassword" name="password" title="password" placeholder="Enter password">
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>

@@ -1,0 +1,11 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="imDAO" class="com.spring.rental.dao.EmployeeRepository"/>
+	<bean id="employeeService" class="com.spring.rental.service.EmployeeServiceImpl">
+	    <property name="dao" ref="imDAO" />
+	</bean>
+
+</beans>

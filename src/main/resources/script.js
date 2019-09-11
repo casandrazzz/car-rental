@@ -8,6 +8,7 @@ $(document).ready(function(){
       searchEmployees(term)
     }
     });
+
 });
 
 function getEmployees(){

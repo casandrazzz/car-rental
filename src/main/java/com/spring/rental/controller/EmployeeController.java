@@ -81,6 +81,8 @@ public class EmployeeController {
         employee.setAge(employeeInsertDto.getAge());
         employee.setPhoneNumber(employeeInsertDto.getPhoneNumber());
         employee.setEmailAddress(employeeInsertDto.getEmailAddress());
+        employee.setUsername(employeeInsertDto.getUsername());
+        employee.setPassword(employeeInsertDto.getPassword());
 
         return new ResponseEntity<>(employeeServiceInterface.updateEmployee(employee),HttpStatus.OK);
 
@@ -106,14 +108,14 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<EmployeeDto> getEmployee(@PathVariable long id) {
-        EmployeeDto employeeDto = null;
+    public ResponseEntity<Employee> getEmployee(@PathVariable long id) {
+        Employee employee = null;
         try {
-            employeeDto = employeeServiceInterface.getEmployee(id);
+            employee = employeeServiceInterface.getEmployee(id);
         } catch (NoEmployeeFound noEmployeeFound) {
             noEmployeeFound.printStackTrace();
         }
-        return new ResponseEntity<>(employeeDto, HttpStatus.OK);
+        return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
     @GetMapping("/search/{term}")

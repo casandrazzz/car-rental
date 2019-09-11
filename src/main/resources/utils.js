@@ -1,24 +1,11 @@
 $(document).ready(function(){
-    if(!getCookie("user")){
+    if(!Cookies.get('user')){
         window.location.href="login.html"
     }
+    $(document).on("click","#logout", function () {
+               logout()
+            });
 });
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
 
 function reloadEmployees(employees){
     $('#employees tbody').empty();
@@ -31,4 +18,9 @@ function reloadEmployees(employees){
                              <td>` + employee.emailAddress + `</td></tr>`;
                        $('#employees').append(row);
                      });
+}
+
+function logout(){
+    Cookies.remove('user')
+    window.location.href="login.html"
 }
